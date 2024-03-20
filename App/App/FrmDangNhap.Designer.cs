@@ -55,9 +55,9 @@ namespace App
             this.panelControl1.Controls.Add(this.CmbKhoa);
             this.panelControl1.Controls.Add(this.label1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(0, 0);
+            this.panelControl1.Location = new System.Drawing.Point(24, 16);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(624, 83);
+            this.panelControl1.Size = new System.Drawing.Size(368, 83);
             this.panelControl1.TabIndex = 9;
             // 
             // CmbKhoa
@@ -67,7 +67,7 @@ namespace App
             this.CmbKhoa.FormattingEnabled = true;
             this.CmbKhoa.Location = new System.Drawing.Point(0, 37);
             this.CmbKhoa.Name = "CmbKhoa";
-            this.CmbKhoa.Size = new System.Drawing.Size(624, 32);
+            this.CmbKhoa.Size = new System.Drawing.Size(368, 32);
             this.CmbKhoa.TabIndex = 6;
             // 
             // label1
@@ -86,9 +86,9 @@ namespace App
             // 
             this.TxbTaiKhoan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TxbTaiKhoan.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxbTaiKhoan.Location = new System.Drawing.Point(0, 201);
+            this.TxbTaiKhoan.Location = new System.Drawing.Point(24, 217);
             this.TxbTaiKhoan.Name = "TxbTaiKhoan";
-            this.TxbTaiKhoan.Size = new System.Drawing.Size(624, 35);
+            this.TxbTaiKhoan.Size = new System.Drawing.Size(368, 35);
             this.TxbTaiKhoan.TabIndex = 14;
             // 
             // panelControl3
@@ -97,9 +97,9 @@ namespace App
             this.panelControl3.Controls.Add(this.LabelTK);
             this.panelControl3.Controls.Add(this.CbSinhVien);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl3.Location = new System.Drawing.Point(0, 164);
+            this.panelControl3.Location = new System.Drawing.Point(24, 180);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(624, 37);
+            this.panelControl3.Size = new System.Drawing.Size(368, 37);
             this.panelControl3.TabIndex = 12;
             // 
             // LabelTK
@@ -118,7 +118,7 @@ namespace App
             this.CbSinhVien.AutoSize = true;
             this.CbSinhVien.Dock = System.Windows.Forms.DockStyle.Right;
             this.CbSinhVien.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CbSinhVien.Location = new System.Drawing.Point(524, 0);
+            this.CbSinhVien.Location = new System.Drawing.Point(268, 0);
             this.CbSinhVien.Name = "CbSinhVien";
             this.CbSinhVien.Size = new System.Drawing.Size(100, 37);
             this.CbSinhVien.TabIndex = 7;
@@ -129,7 +129,7 @@ namespace App
             // 
             this.cbHienMK.AutoSize = true;
             this.cbHienMK.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbHienMK.Location = new System.Drawing.Point(12, 242);
+            this.cbHienMK.Location = new System.Drawing.Point(36, 258);
             this.cbHienMK.Name = "cbHienMK";
             this.cbHienMK.Size = new System.Drawing.Size(139, 25);
             this.cbHienMK.TabIndex = 16;
@@ -142,9 +142,9 @@ namespace App
             this.panelControl4.Controls.Add(this.TxbMatKhau);
             this.panelControl4.Controls.Add(this.label2);
             this.panelControl4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl4.Location = new System.Drawing.Point(0, 83);
+            this.panelControl4.Location = new System.Drawing.Point(24, 99);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(624, 81);
+            this.panelControl4.Size = new System.Drawing.Size(368, 81);
             this.panelControl4.TabIndex = 15;
             // 
             // TxbMatKhau
@@ -153,7 +153,7 @@ namespace App
             this.TxbMatKhau.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxbMatKhau.Location = new System.Drawing.Point(0, 37);
             this.TxbMatKhau.Name = "TxbMatKhau";
-            this.TxbMatKhau.Size = new System.Drawing.Size(624, 35);
+            this.TxbMatKhau.Size = new System.Drawing.Size(368, 35);
             this.TxbMatKhau.TabIndex = 8;
             this.TxbMatKhau.UseSystemPasswordChar = true;
             // 
@@ -173,9 +173,9 @@ namespace App
             // 
             this.BtnDangNhap.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.BtnDangNhap.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnDangNhap.Location = new System.Drawing.Point(0, 318);
+            this.BtnDangNhap.Location = new System.Drawing.Point(24, 301);
             this.BtnDangNhap.Name = "BtnDangNhap";
-            this.BtnDangNhap.Size = new System.Drawing.Size(624, 60);
+            this.BtnDangNhap.Size = new System.Drawing.Size(368, 60);
             this.BtnDangNhap.TabIndex = 13;
             this.BtnDangNhap.Text = "Đăng Nhập";
             this.BtnDangNhap.UseVisualStyleBackColor = true;
@@ -184,7 +184,7 @@ namespace App
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 378);
+            this.ClientSize = new System.Drawing.Size(416, 377);
             this.Controls.Add(this.TxbTaiKhoan);
             this.Controls.Add(this.panelControl3);
             this.Controls.Add(this.cbHienMK);
@@ -192,6 +192,7 @@ namespace App
             this.Controls.Add(this.BtnDangNhap);
             this.Controls.Add(this.panelControl1);
             this.Name = "FrmDangNhap";
+            this.Padding = new System.Windows.Forms.Padding(24, 16, 24, 16);
             this.Text = "FrmDangNhap";
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
