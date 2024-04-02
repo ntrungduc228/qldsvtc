@@ -11,14 +11,14 @@ namespace App
 {
     static class Program
     {
-        public static SqlConnection conn = new SqlConnection("Data Source=DESKTOP-N44BQ15;Initial Catalog=QLDSV_TC;Persist Security Info=True;User ID=sa;Password=123456");
+        public static SqlConnection conn = new SqlConnection("Data Source=DESKTOP-PN0LV22;Initial Catalog=QLDSV_TC;Persist Security Info=True;User ID=sa;Password=123");
         public static String connstr;
-        public static String connstr_publicsher = "Data Source=KHANHVI;Initial Catalog=QLDSV_TC;User ID=sa;Password=123456";
+        public static String connstr_publicsher = "Data Source=DESKTOP-PN0LV22; Initial Catalog=QLDSV_TC;User ID=sa;Password=123";
         public static SqlDataAdapter da;
         public static SqlDataReader myReader;
-        public static String servername = "DESKTOP-N44BQ15";
-        public static String servername1 = "DESKTOP-N44BQ15\\SERVER1";
-        public static String servername2 = "DESKTOP-N44BQ15\\SERVER2";
+        public static String servername = "DESKTOP-PN0LV22";
+        public static String servername1 = "DESKTOP-PN0LV22\\SQLSV1";
+        public static String servername2 = "DESKTOP-PN0LV22\\SQLSV2";
         public static String username = "";
         public static String mlogin = "";
         public static String password = "";

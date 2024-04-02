@@ -57,7 +57,7 @@ namespace App
         private void FrmDangNhap_Load(object sender, EventArgs e)
         {
             if (KetNoi_CSDLGOC() == 0) return;
-            LayDSPM("SELECT * FROM Get_Subscribes");
+            LayDSPM("SELECT * FROM V_DS_PHANMANH");
             CmbKhoa.SelectedIndex = 1;
             CmbKhoa.SelectedIndex = 0;
             this.CenterToScreen();
