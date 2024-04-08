@@ -30,28 +30,28 @@ namespace App
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDangNhap));
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.CbSinhVien = new System.Windows.Forms.CheckBox();
             this.CmbKhoa = new System.Windows.Forms.ComboBox();
-            this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             this.btnDangNhap = new DevExpress.XtraEditors.SimpleButton();
             this.txbMatKhau = new DevExpress.XtraEditors.TextEdit();
             this.txbTaiKhoan = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.LabelTK = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txbMatKhau.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txbTaiKhoan.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // checkBox1
+            // CbSinhVien
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(221, 271);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(85, 21);
-            this.checkBox1.TabIndex = 21;
-            this.checkBox1.Text = "Sinh viên";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.CbSinhVien.AutoSize = true;
+            this.CbSinhVien.Location = new System.Drawing.Point(221, 271);
+            this.CbSinhVien.Name = "CbSinhVien";
+            this.CbSinhVien.Size = new System.Drawing.Size(85, 21);
+            this.CbSinhVien.TabIndex = 21;
+            this.CbSinhVien.Text = "Sinh viên";
+            this.CbSinhVien.UseVisualStyleBackColor = true;
+            this.CbSinhVien.CheckedChanged += new System.EventHandler(this.CbSinhVien_CheckedChanged);
             // 
             // CmbKhoa
             // 
@@ -61,28 +61,19 @@ namespace App
             this.CmbKhoa.Name = "CmbKhoa";
             this.CmbKhoa.Size = new System.Drawing.Size(284, 24);
             this.CmbKhoa.TabIndex = 16;
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
-            this.btnThoat.Location = new System.Drawing.Point(375, 315);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(99, 47);
-            this.btnThoat.TabIndex = 20;
-            this.btnThoat.Text = "Thoát";
+            this.CmbKhoa.SelectedIndexChanged += new System.EventHandler(this.CmbKhoa_SelectedIndexChanged);
             // 
             // btnDangNhap
             // 
             this.btnDangNhap.AutoSize = true;
             this.btnDangNhap.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDangNhap.ImageOptions.SvgImage")));
-            this.btnDangNhap.Location = new System.Drawing.Point(188, 317);
+            this.btnDangNhap.Location = new System.Drawing.Point(269, 317);
             this.btnDangNhap.Margin = new System.Windows.Forms.Padding(4);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(118, 44);
             this.btnDangNhap.TabIndex = 19;
             this.btnDangNhap.Text = "Đăng nhập";
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
             // txbMatKhau
             // 
@@ -111,14 +102,14 @@ namespace App
             this.labelControl3.TabIndex = 13;
             this.labelControl3.Text = "Mật khẩu";
             // 
-            // labelControl2
+            // LabelTK
             // 
-            this.labelControl2.Location = new System.Drawing.Point(141, 188);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(4);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(59, 17);
-            this.labelControl2.TabIndex = 14;
-            this.labelControl2.Text = "Tài khoản";
+            this.LabelTK.Location = new System.Drawing.Point(141, 188);
+            this.LabelTK.Margin = new System.Windows.Forms.Padding(4);
+            this.LabelTK.Name = "LabelTK";
+            this.LabelTK.Size = new System.Drawing.Size(59, 17);
+            this.LabelTK.TabIndex = 14;
+            this.LabelTK.Text = "Tài khoản";
             // 
             // labelControl4
             // 
@@ -134,14 +125,13 @@ namespace App
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(646, 496);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.CbSinhVien);
             this.Controls.Add(this.CmbKhoa);
-            this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.txbMatKhau);
             this.Controls.Add(this.txbTaiKhoan);
             this.Controls.Add(this.labelControl3);
-            this.Controls.Add(this.labelControl2);
+            this.Controls.Add(this.LabelTK);
             this.Controls.Add(this.labelControl4);
             this.Name = "FrmDangNhap";
             this.Padding = new System.Windows.Forms.Padding(24, 16, 24, 16);
@@ -156,14 +146,13 @@ namespace App
 
         #endregion
 
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox CbSinhVien;
         private System.Windows.Forms.ComboBox CmbKhoa;
-        private DevExpress.XtraEditors.SimpleButton btnThoat;
         private DevExpress.XtraEditors.SimpleButton btnDangNhap;
         private DevExpress.XtraEditors.TextEdit txbMatKhau;
         private DevExpress.XtraEditors.TextEdit txbTaiKhoan;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl LabelTK;
         private DevExpress.XtraEditors.LabelControl labelControl4;
     }
 }
