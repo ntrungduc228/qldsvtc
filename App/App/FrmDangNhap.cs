@@ -85,6 +85,7 @@ namespace App
             CmbKhoa.DataSource = Program.bds_dspm;
             CmbKhoa.DisplayMember = "TENKHOA";
             CmbKhoa.ValueMember = "TENSERVER";
+
         }
         private int KetNoi_CSDLGOC()
         {
