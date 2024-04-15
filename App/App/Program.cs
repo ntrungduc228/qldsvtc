@@ -113,6 +113,21 @@ namespace App
                 return ex.State; // trang thai lỗi gởi từ RAISERROR trong SQL Server qua
             }
         }
+
+        public static int CheckDataHelper(String query)
+        {
+            SqlDataReader dataReader = Program.ExecSqlDataReader(query);
+
+            // nếu null thì thoát luôn  ==> lỗi kết nối
+            if (dataReader == null)
+            {
+                return -1;
+            }
+            dataReader.Read();
+            int result = int.Parse(dataReader.GetValue(0).ToString());
+            dataReader.Close();
+            return result;
+        }
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

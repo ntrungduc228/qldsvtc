@@ -30,11 +30,11 @@ namespace App
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLopHoc));
-            System.Windows.Forms.Label mAKHOALabel;
-            System.Windows.Forms.Label kHOAHOCLabel;
-            System.Windows.Forms.Label tENLOPLabel;
             System.Windows.Forms.Label mALOPLabel;
+            System.Windows.Forms.Label tENLOPLabel;
+            System.Windows.Forms.Label kHOAHOCLabel;
+            System.Windows.Forms.Label mAKHOALabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLopHoc));
             this.barManager2 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar4 = new DevExpress.XtraBars.Bar();
             this.bar5 = new DevExpress.XtraBars.Bar();
@@ -67,18 +67,21 @@ namespace App
             this.GcLopHoc = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMALOP = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTENLOP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKHOAHOC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAKHOA = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.TxtMaKhoa = new System.Windows.Forms.TextBox();
-            this.TxtKhoaHoc = new System.Windows.Forms.TextBox();
-            this.TxtTenLop = new System.Windows.Forms.TextBox();
             this.TxtMaLop = new System.Windows.Forms.TextBox();
+            this.TxtTenLop = new System.Windows.Forms.TextBox();
+            this.TxtKhoaHoc = new System.Windows.Forms.TextBox();
+            this.TxtMaKhoa = new System.Windows.Forms.TextBox();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.label3 = new System.Windows.Forms.Label();
-            mAKHOALabel = new System.Windows.Forms.Label();
-            kHOAHOCLabel = new System.Windows.Forms.Label();
-            tENLOPLabel = new System.Windows.Forms.Label();
+            this.BdsSV = new System.Windows.Forms.BindingSource(this.components);
+            this.sINHVIENTableAdapter = new App.DSTableAdapters.SINHVIENTableAdapter();
             mALOPLabel = new System.Windows.Forms.Label();
+            tENLOPLabel = new System.Windows.Forms.Label();
+            kHOAHOCLabel = new System.Windows.Forms.Label();
+            mAKHOALabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -88,7 +91,48 @@ namespace App
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BdsSV)).BeginInit();
             this.SuspendLayout();
+            // 
+            // mALOPLabel
+            // 
+            mALOPLabel.AutoSize = true;
+            mALOPLabel.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            mALOPLabel.Location = new System.Drawing.Point(58, 96);
+            mALOPLabel.Name = "mALOPLabel";
+            mALOPLabel.Size = new System.Drawing.Size(63, 17);
+            mALOPLabel.TabIndex = 0;
+            mALOPLabel.Text = "Mã Lớp:";
+            // 
+            // tENLOPLabel
+            // 
+            tENLOPLabel.AutoSize = true;
+            tENLOPLabel.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            tENLOPLabel.Location = new System.Drawing.Point(58, 144);
+            tENLOPLabel.Name = "tENLOPLabel";
+            tENLOPLabel.Size = new System.Drawing.Size(69, 17);
+            tENLOPLabel.TabIndex = 2;
+            tENLOPLabel.Text = "Tên Lớp:";
+            // 
+            // kHOAHOCLabel
+            // 
+            kHOAHOCLabel.AutoSize = true;
+            kHOAHOCLabel.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            kHOAHOCLabel.Location = new System.Drawing.Point(58, 197);
+            kHOAHOCLabel.Name = "kHOAHOCLabel";
+            kHOAHOCLabel.Size = new System.Drawing.Size(80, 17);
+            kHOAHOCLabel.TabIndex = 4;
+            kHOAHOCLabel.Text = "Khóa Học:";
+            // 
+            // mAKHOALabel
+            // 
+            mAKHOALabel.AutoSize = true;
+            mAKHOALabel.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            mAKHOALabel.Location = new System.Drawing.Point(58, 256);
+            mAKHOALabel.Name = "mAKHOALabel";
+            mAKHOALabel.Size = new System.Drawing.Size(73, 17);
+            mAKHOALabel.TabIndex = 6;
+            mAKHOALabel.Text = "Mã Khoa:";
             // 
             // barManager2
             // 
@@ -151,6 +195,7 @@ namespace App
             this.BtnThemLH.Id = 0;
             this.BtnThemLH.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("BtnThemLH.ImageOptions.SvgImage")));
             this.BtnThemLH.Name = "BtnThemLH";
+            this.BtnThemLH.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnThemLH_ItemClick);
             // 
             // BtnGhiLH
             // 
@@ -158,6 +203,7 @@ namespace App
             this.BtnGhiLH.Id = 1;
             this.BtnGhiLH.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("BtnGhiLH.ImageOptions.SvgImage")));
             this.BtnGhiLH.Name = "BtnGhiLH";
+            this.BtnGhiLH.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnGhiLH_ItemClick);
             // 
             // BtnPhucHoiLH
             // 
@@ -165,6 +211,7 @@ namespace App
             this.BtnPhucHoiLH.Id = 2;
             this.BtnPhucHoiLH.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("BtnPhucHoiLH.ImageOptions.SvgImage")));
             this.BtnPhucHoiLH.Name = "BtnPhucHoiLH";
+            this.BtnPhucHoiLH.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnPhucHoiLH_ItemClick);
             // 
             // BtnXoaLH
             // 
@@ -173,6 +220,7 @@ namespace App
             this.BtnXoaLH.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnXoaLH.ImageOptions.Image")));
             this.BtnXoaLH.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnXoaLH.ImageOptions.LargeImage")));
             this.BtnXoaLH.Name = "BtnXoaLH";
+            this.BtnXoaLH.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnXoaLH_ItemClick);
             // 
             // BtnLamMoiLH
             // 
@@ -180,6 +228,7 @@ namespace App
             this.BtnLamMoiLH.Id = 4;
             this.BtnLamMoiLH.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("BtnLamMoiLH.ImageOptions.SvgImage")));
             this.BtnLamMoiLH.Name = "BtnLamMoiLH";
+            this.BtnLamMoiLH.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnLamMoiLH_ItemClick);
             // 
             // BtnThoatLH
             // 
@@ -187,6 +236,7 @@ namespace App
             this.BtnThoatLH.Id = 5;
             this.BtnThoatLH.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("BtnThoatLH.ImageOptions.SvgImage")));
             this.BtnThoatLH.Name = "BtnThoatLH";
+            this.BtnThoatLH.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnThoatLH_ItemClick);
             // 
             // BtnSuaLH
             // 
@@ -196,6 +246,7 @@ namespace App
             this.BtnSuaLH.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnSuaLH.ImageOptions.LargeImage")));
             this.BtnSuaLH.Name = "BtnSuaLH";
             this.BtnSuaLH.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionInMenu;
+            this.BtnSuaLH.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnSuaLH_ItemClick);
             // 
             // bar6
             // 
@@ -359,12 +410,12 @@ namespace App
             // GcLopHoc
             // 
             this.GcLopHoc.DataSource = this.BdsLH;
-            this.GcLopHoc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GcLopHoc.Dock = System.Windows.Forms.DockStyle.Top;
             this.GcLopHoc.Location = new System.Drawing.Point(0, 168);
             this.GcLopHoc.MainView = this.gridView1;
             this.GcLopHoc.MenuManager = this.barManager2;
             this.GcLopHoc.Name = "GcLopHoc";
-            this.GcLopHoc.Size = new System.Drawing.Size(1583, 552);
+            this.GcLopHoc.Size = new System.Drawing.Size(1583, 182);
             this.GcLopHoc.TabIndex = 37;
             this.GcLopHoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -373,6 +424,7 @@ namespace App
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMALOP,
+            this.colTENLOP,
             this.colKHOAHOC,
             this.colMAKHOA});
             this.gridView1.GridControl = this.GcLopHoc;
@@ -380,7 +432,6 @@ namespace App
             // 
             // colMALOP
             // 
-            this.colMALOP.Caption = "Mã Lớp";
             this.colMALOP.FieldName = "MALOP";
             this.colMALOP.MinWidth = 25;
             this.colMALOP.Name = "colMALOP";
@@ -388,9 +439,17 @@ namespace App
             this.colMALOP.VisibleIndex = 0;
             this.colMALOP.Width = 94;
             // 
+            // colTENLOP
+            // 
+            this.colTENLOP.FieldName = "TENLOP";
+            this.colTENLOP.MinWidth = 25;
+            this.colTENLOP.Name = "colTENLOP";
+            this.colTENLOP.Visible = true;
+            this.colTENLOP.VisibleIndex = 1;
+            this.colTENLOP.Width = 94;
+            // 
             // colKHOAHOC
             // 
-            this.colKHOAHOC.Caption = "Khoá Học";
             this.colKHOAHOC.FieldName = "KHOAHOC";
             this.colKHOAHOC.MinWidth = 25;
             this.colKHOAHOC.Name = "colKHOAHOC";
@@ -400,40 +459,36 @@ namespace App
             // 
             // colMAKHOA
             // 
-            this.colMAKHOA.Caption = "Mã Khoa";
             this.colMAKHOA.FieldName = "MAKHOA";
             this.colMAKHOA.MinWidth = 25;
             this.colMAKHOA.Name = "colMAKHOA";
             this.colMAKHOA.Visible = true;
-            this.colMAKHOA.VisibleIndex = 1;
+            this.colMAKHOA.VisibleIndex = 3;
             this.colMAKHOA.Width = 94;
             // 
-            // panelControl2
+            // TxtMaLop
             // 
-            this.panelControl2.Controls.Add(this.label3);
-            this.panelControl2.Controls.Add(mAKHOALabel);
-            this.panelControl2.Controls.Add(this.TxtMaKhoa);
-            this.panelControl2.Controls.Add(kHOAHOCLabel);
-            this.panelControl2.Controls.Add(this.TxtKhoaHoc);
-            this.panelControl2.Controls.Add(tENLOPLabel);
-            this.panelControl2.Controls.Add(this.TxtTenLop);
-            this.panelControl2.Controls.Add(mALOPLabel);
-            this.panelControl2.Controls.Add(this.TxtMaLop);
-            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl2.Location = new System.Drawing.Point(0, 460);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1583, 260);
-            this.panelControl2.TabIndex = 38;
+            this.TxtMaLop.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BdsLH, "MALOP", true));
+            this.TxtMaLop.Location = new System.Drawing.Point(192, 88);
+            this.TxtMaLop.Name = "TxtMaLop";
+            this.TxtMaLop.Size = new System.Drawing.Size(301, 23);
+            this.TxtMaLop.TabIndex = 1;
             // 
-            // mAKHOALabel
+            // TxtTenLop
             // 
-            mAKHOALabel.AutoSize = true;
-            mAKHOALabel.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
-            mAKHOALabel.Location = new System.Drawing.Point(58, 256);
-            mAKHOALabel.Name = "mAKHOALabel";
-            mAKHOALabel.Size = new System.Drawing.Size(73, 17);
-            mAKHOALabel.TabIndex = 6;
-            mAKHOALabel.Text = "Mã Khoa:";
+            this.TxtTenLop.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BdsLH, "TENLOP", true));
+            this.TxtTenLop.Location = new System.Drawing.Point(192, 144);
+            this.TxtTenLop.Name = "TxtTenLop";
+            this.TxtTenLop.Size = new System.Drawing.Size(301, 23);
+            this.TxtTenLop.TabIndex = 3;
+            // 
+            // TxtKhoaHoc
+            // 
+            this.TxtKhoaHoc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BdsLH, "KHOAHOC", true));
+            this.TxtKhoaHoc.Location = new System.Drawing.Point(192, 197);
+            this.TxtKhoaHoc.Name = "TxtKhoaHoc";
+            this.TxtKhoaHoc.Size = new System.Drawing.Size(301, 23);
+            this.TxtKhoaHoc.TabIndex = 5;
             // 
             // TxtMaKhoa
             // 
@@ -444,77 +499,49 @@ namespace App
             this.TxtMaKhoa.Size = new System.Drawing.Size(301, 23);
             this.TxtMaKhoa.TabIndex = 7;
             // 
-            // kHOAHOCLabel
+            // panelControl2
             // 
-            kHOAHOCLabel.AutoSize = true;
-            kHOAHOCLabel.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
-            kHOAHOCLabel.Location = new System.Drawing.Point(58, 197);
-            kHOAHOCLabel.Name = "kHOAHOCLabel";
-            kHOAHOCLabel.Size = new System.Drawing.Size(80, 17);
-            kHOAHOCLabel.TabIndex = 4;
-            kHOAHOCLabel.Text = "Khóa Học:";
-            // 
-            // TxtKhoaHoc
-            // 
-            this.TxtKhoaHoc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BdsLH, "KHOAHOC", true));
-            this.TxtKhoaHoc.Location = new System.Drawing.Point(192, 197);
-            this.TxtKhoaHoc.Name = "TxtKhoaHoc";
-            this.TxtKhoaHoc.Size = new System.Drawing.Size(301, 23);
-            this.TxtKhoaHoc.TabIndex = 5;
-            // 
-            // tENLOPLabel
-            // 
-            tENLOPLabel.AutoSize = true;
-            tENLOPLabel.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
-            tENLOPLabel.Location = new System.Drawing.Point(58, 144);
-            tENLOPLabel.Name = "tENLOPLabel";
-            tENLOPLabel.Size = new System.Drawing.Size(69, 17);
-            tENLOPLabel.TabIndex = 2;
-            tENLOPLabel.Text = "Tên Lớp:";
-            // 
-            // TxtTenLop
-            // 
-            this.TxtTenLop.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BdsLH, "TENLOP", true));
-            this.TxtTenLop.Location = new System.Drawing.Point(192, 144);
-            this.TxtTenLop.Name = "TxtTenLop";
-            this.TxtTenLop.Size = new System.Drawing.Size(301, 23);
-            this.TxtTenLop.TabIndex = 3;
-            // 
-            // mALOPLabel
-            // 
-            mALOPLabel.AutoSize = true;
-            mALOPLabel.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
-            mALOPLabel.Location = new System.Drawing.Point(58, 96);
-            mALOPLabel.Name = "mALOPLabel";
-            mALOPLabel.Size = new System.Drawing.Size(63, 17);
-            mALOPLabel.TabIndex = 0;
-            mALOPLabel.Text = "Mã Lớp:";
-            // 
-            // TxtMaLop
-            // 
-            this.TxtMaLop.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BdsLH, "MALOP", true));
-            this.TxtMaLop.Location = new System.Drawing.Point(192, 88);
-            this.TxtMaLop.Name = "TxtMaLop";
-            this.TxtMaLop.Size = new System.Drawing.Size(301, 23);
-            this.TxtMaLop.TabIndex = 1;
+            this.panelControl2.Controls.Add(mAKHOALabel);
+            this.panelControl2.Controls.Add(this.TxtMaKhoa);
+            this.panelControl2.Controls.Add(kHOAHOCLabel);
+            this.panelControl2.Controls.Add(this.TxtKhoaHoc);
+            this.panelControl2.Controls.Add(tENLOPLabel);
+            this.panelControl2.Controls.Add(this.TxtTenLop);
+            this.panelControl2.Controls.Add(mALOPLabel);
+            this.panelControl2.Controls.Add(this.TxtMaLop);
+            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelControl2.Location = new System.Drawing.Point(0, 391);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(1583, 329);
+            this.panelControl2.TabIndex = 38;
             // 
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(2, 2);
+            this.label3.Location = new System.Drawing.Point(0, 350);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(1579, 48);
-            this.label3.TabIndex = 8;
+            this.label3.Size = new System.Drawing.Size(1583, 38);
+            this.label3.TabIndex = 43;
             this.label3.Text = "Thông tin lớp học";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // BdsSV
+            // 
+            this.BdsSV.DataMember = "FK_LOP_SINHVIEN";
+            this.BdsSV.DataSource = this.BdsLH;
+            // 
+            // sINHVIENTableAdapter
+            // 
+            this.sINHVIENTableAdapter.ClearBeforeFill = true;
             // 
             // FrmLopHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1583, 740);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.GcLopHoc);
             this.Controls.Add(this.label2);
@@ -538,6 +565,7 @@ namespace App
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BdsSV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -576,14 +604,17 @@ namespace App
         private DSTableAdapters.TableAdapterManager tableAdapterManager;
         private DevExpress.XtraGrid.GridControl GcLopHoc;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn colMALOP;
+        private DevExpress.XtraGrid.Columns.GridColumn colTENLOP;
+        private DevExpress.XtraGrid.Columns.GridColumn colKHOAHOC;
+        private DevExpress.XtraGrid.Columns.GridColumn colMAKHOA;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private System.Windows.Forms.TextBox TxtMaKhoa;
         private System.Windows.Forms.TextBox TxtKhoaHoc;
         private System.Windows.Forms.TextBox TxtTenLop;
-        private DevExpress.XtraGrid.Columns.GridColumn colMALOP;
-        private DevExpress.XtraGrid.Columns.GridColumn colKHOAHOC;
-        private DevExpress.XtraGrid.Columns.GridColumn colMAKHOA;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox TxtMaLop;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.BindingSource BdsSV;
+        private DSTableAdapters.SINHVIENTableAdapter sINHVIENTableAdapter;
     }
 }
