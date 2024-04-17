@@ -44,5 +44,10 @@ namespace App
         {
             ShowMdiChildren(typeof(FrmLopHoc));
         }
+
+        private void BtnSinhVien_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(FrmSinhVien));
+        }
     }
 }

@@ -105,13 +105,14 @@ namespace App
             this.BtnSinhVien.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnSinhVien.ImageOptions.LargeImage")));
             this.BtnSinhVien.LargeWidth = 60;
             this.BtnSinhVien.Name = "BtnSinhVien";
+            this.BtnSinhVien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnSinhVien_ItemClick);
             // 
             // BtnLopHoc
             // 
             this.BtnLopHoc.Caption = "Lớp học";
             this.BtnLopHoc.Id = 2;
-            this.BtnLopHoc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.BtnLopHoc.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.BtnLopHoc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnLopHoc.ImageOptions.Image")));
+            this.BtnLopHoc.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnLopHoc.ImageOptions.LargeImage")));
             this.BtnLopHoc.LargeWidth = 60;
             this.BtnLopHoc.Name = "BtnLopHoc";
             this.BtnLopHoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnLopHoc_ItemClick);
