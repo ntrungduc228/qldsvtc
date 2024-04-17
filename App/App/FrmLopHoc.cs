@@ -218,61 +218,61 @@ namespace App
                 return false;
             }
 
-           // if (((TxtMaLop.Text.Trim() != maLopSua.Trim()) && (chonThem == false)) || chonThem == true)
-           // {
-           //     String query = "DECLARE @result INT;" +
-           //"EXEC @result = SP_KTMaLopHoc " + TxtMaLop.Text.Trim() + " SELECT @result AS Result;";
-           //     int result = Program.CheckDataHelper(query);
-           //     if (result == -1)
-           //     {
-           //         MessageBox.Show("Lỗi kết nối với database. Mời bạn xem lại", "", MessageBoxButtons.OK);
-           //         this.Close();
-           //     }
+            if (((TxtMaLop.Text.Trim() != maLopSua.Trim()) && (chonThem == false)) || chonThem == true)
+            {
+                String query = "DECLARE @result INT;" +
+           "EXEC @result = SP_KTMaLopHoc " + TxtMaLop.Text.Trim() + " SELECT @result AS Result;";
+                int result = Program.CheckDataHelper(query);
+                if (result == -1)
+                {
+                    MessageBox.Show("Lỗi kết nối với database. Mời bạn xem lại", "", MessageBoxButtons.OK);
+                    this.Close();
+                }
 
-           //     if (result == 1)
-           //     {
-           //         MessageBox.Show("Mã lớp đã tồn tại!", "", MessageBoxButtons.OK);
-           //         TxtMaLop.Focus();
-           //         return false;
+                if (result == 1)
+                {
+                    MessageBox.Show("Mã lớp đã tồn tại!", "", MessageBoxButtons.OK);
+                    TxtMaLop.Focus();
+                    return false;
 
-           //     }
-           //     else if (result == 2)
-           //     {
-           //         MessageBox.Show("Mã lớp đã tồn tại ở khóa khác!", "", MessageBoxButtons.OK);
-           //         TxtMaLop.Focus();
-           //         return false;
-           //     }
-           // }
-
-
+                }
+                else if (result == 2)
+                {
+                    MessageBox.Show("Mã lớp đã tồn tại ở khóa khác!", "", MessageBoxButtons.OK);
+                    TxtMaLop.Focus();
+                    return false;
+                }
+            }
 
 
-            //if (((TxtTenLop.Text.Trim() != tenLopSua.Trim()) && (chonThem == false)) || chonThem == true)
-            //{
-            //    String query2 = "DECLARE @result INT;" +
-            //   "EXEC @result = SP_KTTenLop N'" + TxtTenLop.Text.Trim() + "' SELECT @result AS Result;";
 
-            //    int result2 = Program.CheckDataHelper(query2);
-            //    if (result2 == -1)
-            //    {
-            //        MessageBox.Show("Lỗi kết nối với database. Mời bạn xem lại", "", MessageBoxButtons.OK);
-            //        this.Close();
-            //    }
 
-            //    if (result2 == 1)
-            //    {
-            //        MessageBox.Show("Tên lớp đã tồn tại!", "", MessageBoxButtons.OK);
-            //        TxtMaLop.Focus();
-            //        return false;
+            if (((TxtTenLop.Text.Trim() != tenLopSua.Trim()) && (chonThem == false)) || chonThem == true)
+            {
+                String query2 = "DECLARE @result INT;" +
+               "EXEC @result = SP_KTTenLop N'" + TxtTenLop.Text.Trim() + "' SELECT @result AS Result;";
 
-            //    }
-            //    else if (result2 == 2)
-            //    {
-            //        MessageBox.Show("Tên lớp đã tồn tại ở khóa khác!", "", MessageBoxButtons.OK);
-            //        TxtMaLop.Focus();
-            //        return false;
-            //    }
-            //}
+                int result2 = Program.CheckDataHelper(query2);
+                if (result2 == -1)
+                {
+                    MessageBox.Show("Lỗi kết nối với database. Mời bạn xem lại", "", MessageBoxButtons.OK);
+                    this.Close();
+                }
+
+                if (result2 == 1)
+                {
+                    MessageBox.Show("Tên lớp đã tồn tại!", "", MessageBoxButtons.OK);
+                    TxtMaLop.Focus();
+                    return false;
+
+                }
+                else if (result2 == 2)
+                {
+                    MessageBox.Show("Tên lớp đã tồn tại ở khóa khác!", "", MessageBoxButtons.OK);
+                    TxtMaLop.Focus();
+                    return false;
+                }
+            }
 
 
 
@@ -354,6 +354,7 @@ namespace App
             chonThem = false;
             CmbKhoa.Enabled = BtnSuaLH.Enabled = BtnThemLH.Enabled = BtnLamMoiLH.Enabled = BtnThoatLH.Enabled = BtnXoaLH.Enabled = false;
             panelControl2.Enabled = BtnPhucHoiLH.Enabled = BtnGhiLH.Enabled = true;
-            GcLopHoc.Enabled = false        }
+            GcLopHoc.Enabled = false;       
+        }
     }
 }

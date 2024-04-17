@@ -148,3 +148,4 @@ C:\Users\anony\OneDrive\Desktop\Workspace\C#\qldsvtc\App\App\bin\Debug\es\DevExp
 C:\Users\anony\OneDrive\Desktop\Workspace\C#\qldsvtc\App\App\bin\Debug\ja\DevExpress.Office.v19.2.Core.resources.dll
 C:\Users\anony\OneDrive\Desktop\Workspace\C#\qldsvtc\App\App\bin\Debug\ru\DevExpress.Office.v19.2.Core.resources.dll
 C:\Users\anony\OneDrive\Desktop\Workspace\C#\qldsvtc\App\App\obj\Debug\App.FrmLopHoc.resources
+C:\Users\anony\OneDrive\Desktop\Workspace\C#\qldsvtc\App\App\obj\Debug\App.FrmSinhVien.resources
