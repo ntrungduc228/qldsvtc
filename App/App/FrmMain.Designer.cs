@@ -34,7 +34,7 @@ namespace App
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.BtnSinhVien = new DevExpress.XtraBars.BarButtonItem();
             this.BtnLopHoc = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnMonHoc = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
@@ -73,7 +73,7 @@ namespace App
             this.ribbon.SearchEditItem,
             this.BtnSinhVien,
             this.BtnLopHoc,
-            this.barButtonItem2,
+            this.BtnMonHoc,
             this.barButtonItem3,
             this.barButtonItem4,
             this.barButtonItem5,
@@ -117,14 +117,15 @@ namespace App
             this.BtnLopHoc.Name = "BtnLopHoc";
             this.BtnLopHoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnLopHoc_ItemClick);
             // 
-            // barButtonItem2
+            // BtnMonHoc
             // 
-            this.barButtonItem2.Caption = "Môn học";
-            this.barButtonItem2.Id = 3;
-            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
-            this.barButtonItem2.LargeWidth = 60;
-            this.barButtonItem2.Name = "barButtonItem2";
+            this.BtnMonHoc.Caption = "Môn học";
+            this.BtnMonHoc.Id = 3;
+            this.BtnMonHoc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.BtnMonHoc.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.BtnMonHoc.LargeWidth = 60;
+            this.BtnMonHoc.Name = "BtnMonHoc";
+            this.BtnMonHoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnMonHoc_ItemClick);
             // 
             // barButtonItem3
             // 
@@ -255,7 +256,7 @@ namespace App
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.BtnSinhVien);
             this.ribbonPageGroup1.ItemLinks.Add(this.BtnLopHoc);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem2);
+            this.ribbonPageGroup1.ItemLinks.Add(this.BtnMonHoc);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem3);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem4);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem5);
@@ -371,7 +372,7 @@ namespace App
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
         private DevExpress.XtraBars.BarButtonItem BtnSinhVien;
         private DevExpress.XtraBars.BarButtonItem BtnLopHoc;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem BtnMonHoc;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;

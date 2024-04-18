@@ -49,5 +49,10 @@ namespace App
         {
             ShowMdiChildren(typeof(FrmSinhVien));
         }
+
+        private void BtnMonHoc_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(FrmMonHoc));
+        }
     }
 }
