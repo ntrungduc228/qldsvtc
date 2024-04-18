@@ -54,3 +54,43 @@ BEGIN
     RETURN 0; -- Không bị trùng được thêm
 END
 
+create PROCEDURE checkExistsGV_MH
+    @MAGV nchar(10), @TENGV nvarchar(100),
+    @MAMH nchar(9), @TENMH nvarchar(50)
+AS
+BEGIN
+	DECLARE @KT_MAMH  INT, @KT_MAGV int;
+    IF EXISTS (SELECT * FROM GIANGVIEN WHERE MAGV = @MAGV and HO + ' ' + TEN = @TENGV)
+        SET @KT_MAGV = 1
+    IF EXISTS (SELECT * FROM MONHOC WHERE MAMH = @MAMH and TENMH = @TENMH)
+        SET @KT_MAMH = 2
+	IF(@KT_MAGV = 1 and @KT_MAMH = 2)
+		return 1
+	else if(@KT_MAGV = 1 )
+		return 2
+	else if(@KT_MAMH = 2)
+		return 3
+	else
+		return 0
+
+END
+
+create PROCEDURE checkExistLTC
+	@NIENKHOA nchar(9),
+	@HOCKY int,
+	@MAMH nchar(9),
+	@NHOM int
+AS
+Begin
+	if exists( select *
+	From LOPTINCHI
+	where @NIENKHOA = NIENKHOA and @HOCKY = HOCKY and @MAMH = MAMH and @NHOM = NHOM)
+		return 1;
+	else
+		return 0;
+end
+
+create PROCEDURE SP_LayDSGV AS
+BEGIN
+	SELECT MAGV,HOTEN = HO+' '+TEN FROM dbo.GIANGVIEN 
+END

@@ -54,5 +54,16 @@ namespace App
         {
             ShowMdiChildren(typeof(FrmMonHoc));
         }
+
+        private void BtnLopTC_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(FrmLTC));
+
+        }
+
+        private void barButtonItem15_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
     }
 }

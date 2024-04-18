@@ -35,7 +35,7 @@ namespace App
             this.BtnSinhVien = new DevExpress.XtraBars.BarButtonItem();
             this.BtnLopHoc = new DevExpress.XtraBars.BarButtonItem();
             this.BtnMonHoc = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnLopTC = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
@@ -74,7 +74,7 @@ namespace App
             this.BtnSinhVien,
             this.BtnLopHoc,
             this.BtnMonHoc,
-            this.barButtonItem3,
+            this.BtnLopTC,
             this.barButtonItem4,
             this.barButtonItem5,
             this.barButtonItem6,
@@ -121,20 +121,21 @@ namespace App
             // 
             this.BtnMonHoc.Caption = "Môn học";
             this.BtnMonHoc.Id = 3;
-            this.BtnMonHoc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.BtnMonHoc.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.BtnMonHoc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnMonHoc.ImageOptions.Image")));
+            this.BtnMonHoc.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnMonHoc.ImageOptions.LargeImage")));
             this.BtnMonHoc.LargeWidth = 60;
             this.BtnMonHoc.Name = "BtnMonHoc";
             this.BtnMonHoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnMonHoc_ItemClick);
             // 
-            // barButtonItem3
+            // BtnLopTC
             // 
-            this.barButtonItem3.Caption = "Lớp TC";
-            this.barButtonItem3.Id = 4;
-            this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.barButtonItem3.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
-            this.barButtonItem3.LargeWidth = 60;
-            this.barButtonItem3.Name = "barButtonItem3";
+            this.BtnLopTC.Caption = "Lớp TC";
+            this.BtnLopTC.Id = 4;
+            this.BtnLopTC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
+            this.BtnLopTC.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
+            this.BtnLopTC.LargeWidth = 60;
+            this.BtnLopTC.Name = "BtnLopTC";
+            this.BtnLopTC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnLopTC_ItemClick);
             // 
             // barButtonItem4
             // 
@@ -243,6 +244,7 @@ namespace App
             this.barButtonItem15.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.ImageOptions.LargeImage")));
             this.barButtonItem15.LargeWidth = 60;
             this.barButtonItem15.Name = "barButtonItem15";
+            this.barButtonItem15.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem15_ItemClick);
             // 
             // HeThong
             // 
@@ -257,7 +259,7 @@ namespace App
             this.ribbonPageGroup1.ItemLinks.Add(this.BtnSinhVien);
             this.ribbonPageGroup1.ItemLinks.Add(this.BtnLopHoc);
             this.ribbonPageGroup1.ItemLinks.Add(this.BtnMonHoc);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem3);
+            this.ribbonPageGroup1.ItemLinks.Add(this.BtnLopTC);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem4);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem5);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem6);
@@ -373,7 +375,7 @@ namespace App
         private DevExpress.XtraBars.BarButtonItem BtnSinhVien;
         private DevExpress.XtraBars.BarButtonItem BtnLopHoc;
         private DevExpress.XtraBars.BarButtonItem BtnMonHoc;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem BtnLopTC;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;

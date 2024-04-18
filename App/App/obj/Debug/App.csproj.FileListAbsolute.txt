@@ -150,3 +150,4 @@ C:\Users\anony\OneDrive\Desktop\Workspace\C#\qldsvtc\App\App\bin\Debug\ru\DevExp
 C:\Users\anony\OneDrive\Desktop\Workspace\C#\qldsvtc\App\App\obj\Debug\App.FrmLopHoc.resources
 C:\Users\anony\OneDrive\Desktop\Workspace\C#\qldsvtc\App\App\obj\Debug\App.FrmSinhVien.resources
 C:\Users\anony\OneDrive\Desktop\Workspace\C#\qldsvtc\App\App\obj\Debug\App.FrmMonHoc.resources
+C:\Users\anony\OneDrive\Desktop\Workspace\C#\qldsvtc\App\App\obj\Debug\App.FrmLTC.resources
