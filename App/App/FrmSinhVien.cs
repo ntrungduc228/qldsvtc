@@ -33,6 +33,8 @@ namespace App
 
         private void FrmSinhVien_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'DS.SINHVIEN' table. You can move, or remove it, as needed.
+            // TODO: This line of code loads data into the 'DS.SINHVIEN' table. You can move, or remove it, as needed.
             DS.EnforceConstraints = false;
             this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
             // TODO: This line of code loads data into the 'dS2.LOP' table. You can move, or remove it, as needed.
@@ -70,10 +72,10 @@ namespace App
 
         private void BtnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            vitri = BdsSv.Position;
+            vitri = BdsSV.Position;
             themSV = true;
             panelControl2.Enabled = true;
-            BdsSv.AddNew();
+            BdsSV.AddNew();
             TxtMaSV.Focus();
             TxtMaLop.Text = ((DataRowView)this.BdsLH[this.gridViewLH.FocusedRowHandle])["MALOP"].ToString();
             CbPhai.Checked = false;
@@ -87,8 +89,8 @@ namespace App
         {
             if (MessageBox.Show("Bạn muốn hủy bỏ tất cả thao tác?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                BdsSv.CancelEdit();
-                if (BtnThem.Enabled == false) BdsSv.Position = vitri;
+                BdsSV.CancelEdit();
+                if (BtnThem.Enabled == false) BdsSV.Position = vitri;
 
                 GcLopHoc.Enabled = GcSinhVien.Enabled = true;
                 panelControl2.Enabled = false;
@@ -155,7 +157,7 @@ namespace App
 
         private void BtnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (BdsSv.Count == 0)
+            if (BdsSV.Count == 0)
             {
                 MessageBox.Show("Không có dữ liệu để sửa", "", MessageBoxButtons.OK);
 
@@ -173,7 +175,7 @@ namespace App
         private void BtnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             string masv = "";
-            if (BdsSv.Count == 0)
+            if (BdsSV.Count == 0)
             {
                 MessageBox.Show("Lớp không có sinh viên", "Thông báo", MessageBoxButtons.OK);
                 return;
@@ -189,8 +191,8 @@ namespace App
             {
                 try
                 {
-                    masv = ((DataRowView)BdsSv[BdsSv.Position])["MASV"].ToString();
-                    BdsSv.RemoveCurrent();
+                    masv = ((DataRowView)BdsSV[BdsSV.Position])["MASV"].ToString();
+                    BdsSV.RemoveCurrent();
                     this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
                     this.sINHVIENTableAdapter.Update(this.DS.SINHVIEN);
                     MessageBox.Show("Xoá thành công!");
@@ -199,12 +201,12 @@ namespace App
                 {
                     MessageBox.Show("Lỗi xóa sinh viên: " + ex.Message, "", MessageBoxButtons.OK);
                     this.sINHVIENTableAdapter.Fill(this.DS.SINHVIEN);
-                    BdsSv.Position = BdsLH.Find("MASV", masv);
+                    BdsSV.Position = BdsLH.Find("MASV", masv);
                     return;
                 }
             }
 
-            if (BdsSv.Count == 0) BtnXoa.Enabled = false;
+            if (BdsSV.Count == 0) BtnXoa.Enabled = false;
         }
 
         private bool validatorSinhVien()
@@ -311,8 +313,8 @@ namespace App
             {
                 try
                 {
-                    BdsSv.EndEdit(); //kt hiệu chỉnh ghi vào bds
-                    BdsSv.ResetCurrentItem(); //đưa thông tin lên lưới
+                    BdsSV.EndEdit(); //kt hiệu chỉnh ghi vào bds
+                    BdsSV.ResetCurrentItem(); //đưa thông tin lên lưới
                     this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
                     this.sINHVIENTableAdapter.Update(this.DS.SINHVIEN);
                     MessageBox.Show("Đã thành công!");

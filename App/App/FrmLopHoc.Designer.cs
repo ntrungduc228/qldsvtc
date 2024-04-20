@@ -529,7 +529,7 @@ namespace App
             // 
             // BdsSV
             // 
-            this.BdsSV.DataMember = "FK_LOP_SINHVIEN";
+            this.BdsSV.DataMember = "FK_SINHVIEN_LOP";
             this.BdsSV.DataSource = this.BdsLH;
             // 
             // sINHVIENTableAdapter
