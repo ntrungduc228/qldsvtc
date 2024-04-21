@@ -61,8 +61,9 @@ namespace App
 
         }
 
-        private void barButtonItem15_ItemClick(object sender, ItemClickEventArgs e)
+        private void btnHocPhi_ItemClick(object sender, ItemClickEventArgs e)
         {
+            ShowMdiChildren(typeof(FrmHocPhi));
 
         }
     }

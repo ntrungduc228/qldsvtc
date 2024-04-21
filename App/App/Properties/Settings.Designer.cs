@@ -32,5 +32,15 @@ namespace App.Properties {
                 return ((string)(this["QLDSV_TCConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-PN0LV22\\SQLSV3;Initial Catalog=QLDSV_TC;User ID=sa")]
+        public string DSHP {
+            get {
+                return ((string)(this["DSHP"]));
+            }
+        }
     }
 }
