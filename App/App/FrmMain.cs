@@ -66,5 +66,10 @@ namespace App
             ShowMdiChildren(typeof(FrmHocPhi));
 
         }
+
+        private void BtnDSLTC_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(Frpt_LTC));
+        }
     }
 }

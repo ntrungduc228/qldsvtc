@@ -152,3 +152,4 @@ C:\Users\anony\OneDrive\Desktop\Workspace\C#\qldsvtc\App\App\obj\Debug\App.FrmSi
 C:\Users\anony\OneDrive\Desktop\Workspace\C#\qldsvtc\App\App\obj\Debug\App.FrmMonHoc.resources
 C:\Users\anony\OneDrive\Desktop\Workspace\C#\qldsvtc\App\App\obj\Debug\App.FrmLTC.resources
 C:\Users\anony\OneDrive\Desktop\Workspace\C#\qldsvtc\App\App\obj\Debug\App.FrmHocPhi.resources
+C:\Users\anony\OneDrive\Desktop\Workspace\C#\qldsvtc\App\App\obj\Debug\App.Frpt_LTC.resources

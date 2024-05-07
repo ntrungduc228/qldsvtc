@@ -39,7 +39,7 @@ namespace App
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.btnHocPhi = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnDSLTC = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
@@ -78,7 +78,7 @@ namespace App
             this.barButtonItem4,
             this.btnHocPhi,
             this.barButtonItem6,
-            this.barButtonItem7,
+            this.BtnDSLTC,
             this.barButtonItem8,
             this.barButtonItem9,
             this.barButtonItem10,
@@ -150,8 +150,8 @@ namespace App
             // 
             this.btnHocPhi.Caption = "Học phí";
             this.btnHocPhi.Id = 6;
-            this.btnHocPhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
-            this.btnHocPhi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.LargeImage")));
+            this.btnHocPhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHocPhi.ImageOptions.Image")));
+            this.btnHocPhi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHocPhi.ImageOptions.LargeImage")));
             this.btnHocPhi.LargeWidth = 60;
             this.btnHocPhi.Name = "btnHocPhi";
             this.btnHocPhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHocPhi_ItemClick);
@@ -165,14 +165,15 @@ namespace App
             this.barButtonItem6.LargeWidth = 60;
             this.barButtonItem6.Name = "barButtonItem6";
             // 
-            // barButtonItem7
+            // BtnDSLTC
             // 
-            this.barButtonItem7.Caption = "In DSLTC";
-            this.barButtonItem7.Id = 8;
-            this.barButtonItem7.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.Image")));
-            this.barButtonItem7.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.LargeImage")));
-            this.barButtonItem7.LargeWidth = 60;
-            this.barButtonItem7.Name = "barButtonItem7";
+            this.BtnDSLTC.Caption = "In DSLTC";
+            this.BtnDSLTC.Id = 8;
+            this.BtnDSLTC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.Image")));
+            this.BtnDSLTC.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.LargeImage")));
+            this.BtnDSLTC.LargeWidth = 60;
+            this.BtnDSLTC.Name = "BtnDSLTC";
+            this.BtnDSLTC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnDSLTC_ItemClick);
             // 
             // barButtonItem8
             // 
@@ -276,7 +277,7 @@ namespace App
             // 
             // ribbonPageGroup2
             // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem7);
+            this.ribbonPageGroup2.ItemLinks.Add(this.BtnDSLTC);
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem8);
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem9);
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem10);
@@ -379,7 +380,7 @@ namespace App
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.BarButtonItem btnHocPhi;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
+        private DevExpress.XtraBars.BarButtonItem BtnDSLTC;
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
         private DevExpress.XtraBars.BarButtonItem barButtonItem9;
         private DevExpress.XtraBars.BarButtonItem barButtonItem10;
