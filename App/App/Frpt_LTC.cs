@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraReports.UI;
+
 
 namespace App
 {
@@ -125,7 +127,14 @@ namespace App
 
         private void BtnIn_Click(object sender, EventArgs e)
         {
+            Xrpt_LTC rpt = new Xrpt_LTC(CmbNienKhoa.Text, int.Parse(CmbHocKy.Text));
 
+            rpt.LbKhoa.Text = CmbKhoa.Text;
+            rpt.LbNienKhoa.Text = CmbNienKhoa.Text;
+            rpt.LbHocKy.Text = CmbHocKy.Text;
+
+            ReportPrintTool print = new ReportPrintTool(rpt);
+            print.ShowPreviewDialog();
         }
 
         private void BtnThoat_Click(object sender, EventArgs e)
