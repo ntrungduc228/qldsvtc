@@ -71,5 +71,11 @@ namespace App
         {
             ShowMdiChildren(typeof(Frpt_LTC));
         }
+
+        private void barButtonItem8_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(Fpt_SVDKLTC));
+
+        }
     }
 }

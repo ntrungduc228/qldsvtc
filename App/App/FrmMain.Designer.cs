@@ -169,8 +169,8 @@ namespace App
             // 
             this.BtnDSLTC.Caption = "In DSLTC";
             this.BtnDSLTC.Id = 8;
-            this.BtnDSLTC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.Image")));
-            this.BtnDSLTC.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.LargeImage")));
+            this.BtnDSLTC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnDSLTC.ImageOptions.Image")));
+            this.BtnDSLTC.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnDSLTC.ImageOptions.LargeImage")));
             this.BtnDSLTC.LargeWidth = 60;
             this.BtnDSLTC.Name = "BtnDSLTC";
             this.BtnDSLTC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnDSLTC_ItemClick);
@@ -183,6 +183,7 @@ namespace App
             this.barButtonItem8.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.LargeImage")));
             this.barButtonItem8.LargeWidth = 60;
             this.barButtonItem8.Name = "barButtonItem8";
+            this.barButtonItem8.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick);
             // 
             // barButtonItem9
             // 

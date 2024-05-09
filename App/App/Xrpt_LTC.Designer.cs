@@ -398,7 +398,7 @@ namespace App
             this.tableCell7.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.tableCell7.Dpi = 254F;
             this.tableCell7.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumRecordNumber()")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "3")});
             this.tableCell7.Multiline = true;
             this.tableCell7.Name = "tableCell7";
             this.tableCell7.StyleName = "DetailData1";

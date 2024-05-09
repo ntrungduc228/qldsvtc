@@ -78,6 +78,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSHP.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Fpt_SVDKLTC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fpt_SVDKLTC.Designer.cs">
+      <DependentUpon>Fpt_SVDKLTC.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,15 @@
     <Compile Include="Xrpt_LTC.Designer.cs">
       <DependentUpon>Xrpt_LTC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Xrpt_SVDKLTC.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xrpt_SVDKLTC.Designer.cs">
+      <DependentUpon>Xrpt_SVDKLTC.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Fpt_SVDKLTC.resx">
+      <DependentUpon>Fpt_SVDKLTC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmDangNhap.resx">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -170,6 +185,9 @@
     </Compile>
     <EmbeddedResource Include="Xrpt_LTC.resx">
       <DependentUpon>Xrpt_LTC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xrpt_SVDKLTC.resx">
+      <DependentUpon>Xrpt_SVDKLTC.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="DS.xsc">
