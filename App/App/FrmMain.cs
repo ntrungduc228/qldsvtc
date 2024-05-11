@@ -83,5 +83,16 @@ namespace App
             ShowMdiChildren(typeof(FrmDangKi));
 
         }
+
+        private void BtnDiem_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(FrmDiem));
+
+        }
+
+        private void BtnBDHM_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
     }
 }

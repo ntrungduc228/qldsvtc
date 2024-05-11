@@ -36,12 +36,12 @@ namespace App
             this.BtnLopHoc = new DevExpress.XtraBars.BarButtonItem();
             this.BtnMonHoc = new DevExpress.XtraBars.BarButtonItem();
             this.BtnLopTC = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnDiem = new DevExpress.XtraBars.BarButtonItem();
             this.btnHocPhi = new DevExpress.XtraBars.BarButtonItem();
             this.BtnDangKy = new DevExpress.XtraBars.BarButtonItem();
             this.BtnDSLTC = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnBDHM = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
@@ -75,12 +75,12 @@ namespace App
             this.BtnLopHoc,
             this.BtnMonHoc,
             this.BtnLopTC,
-            this.barButtonItem4,
+            this.BtnDiem,
             this.btnHocPhi,
             this.BtnDangKy,
             this.BtnDSLTC,
             this.barButtonItem8,
-            this.barButtonItem9,
+            this.BtnBDHM,
             this.barButtonItem10,
             this.barButtonItem11,
             this.barButtonItem12,
@@ -137,14 +137,15 @@ namespace App
             this.BtnLopTC.Name = "BtnLopTC";
             this.BtnLopTC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnLopTC_ItemClick);
             // 
-            // barButtonItem4
+            // BtnDiem
             // 
-            this.barButtonItem4.Caption = "Điểm";
-            this.barButtonItem4.Id = 5;
-            this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
-            this.barButtonItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
-            this.barButtonItem4.LargeWidth = 60;
-            this.barButtonItem4.Name = "barButtonItem4";
+            this.BtnDiem.Caption = "Điểm";
+            this.BtnDiem.Id = 5;
+            this.BtnDiem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnDiem.ImageOptions.Image")));
+            this.BtnDiem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnDiem.ImageOptions.LargeImage")));
+            this.BtnDiem.LargeWidth = 60;
+            this.BtnDiem.Name = "BtnDiem";
+            this.BtnDiem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnDiem_ItemClick);
             // 
             // btnHocPhi
             // 
@@ -160,8 +161,8 @@ namespace App
             // 
             this.BtnDangKy.Caption = "Đăng ký";
             this.BtnDangKy.Id = 7;
-            this.BtnDangKy.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
-            this.BtnDangKy.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.LargeImage")));
+            this.BtnDangKy.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnDangKy.ImageOptions.Image")));
+            this.BtnDangKy.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnDangKy.ImageOptions.LargeImage")));
             this.BtnDangKy.LargeWidth = 60;
             this.BtnDangKy.Name = "BtnDangKy";
             this.BtnDangKy.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnDangKy_ItemClick);
@@ -186,14 +187,15 @@ namespace App
             this.barButtonItem8.Name = "barButtonItem8";
             this.barButtonItem8.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick);
             // 
-            // barButtonItem9
+            // BtnBDHM
             // 
-            this.barButtonItem9.Caption = "In BDMH";
-            this.barButtonItem9.Id = 10;
-            this.barButtonItem9.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.ImageOptions.Image")));
-            this.barButtonItem9.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.ImageOptions.LargeImage")));
-            this.barButtonItem9.LargeWidth = 60;
-            this.barButtonItem9.Name = "barButtonItem9";
+            this.BtnBDHM.Caption = "In BDMH";
+            this.BtnBDHM.Id = 10;
+            this.BtnBDHM.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.ImageOptions.Image")));
+            this.BtnBDHM.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.ImageOptions.LargeImage")));
+            this.BtnBDHM.LargeWidth = 60;
+            this.BtnBDHM.Name = "BtnBDHM";
+            this.BtnBDHM.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnBDHM_ItemClick);
             // 
             // barButtonItem10
             // 
@@ -263,7 +265,7 @@ namespace App
             this.ribbonPageGroup1.ItemLinks.Add(this.BtnLopHoc);
             this.ribbonPageGroup1.ItemLinks.Add(this.BtnMonHoc);
             this.ribbonPageGroup1.ItemLinks.Add(this.BtnLopTC);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem4);
+            this.ribbonPageGroup1.ItemLinks.Add(this.BtnDiem);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnHocPhi);
             this.ribbonPageGroup1.ItemLinks.Add(this.BtnDangKy);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
@@ -281,7 +283,7 @@ namespace App
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.BtnDSLTC);
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem8);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem9);
+            this.ribbonPageGroup2.ItemLinks.Add(this.BtnBDHM);
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem10);
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem11);
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem12);
@@ -379,12 +381,12 @@ namespace App
         private DevExpress.XtraBars.BarButtonItem BtnLopHoc;
         private DevExpress.XtraBars.BarButtonItem BtnMonHoc;
         private DevExpress.XtraBars.BarButtonItem BtnLopTC;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem BtnDiem;
         private DevExpress.XtraBars.BarButtonItem btnHocPhi;
         private DevExpress.XtraBars.BarButtonItem BtnDangKy;
         private DevExpress.XtraBars.BarButtonItem BtnDSLTC;
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem9;
+        private DevExpress.XtraBars.BarButtonItem BtnBDHM;
         private DevExpress.XtraBars.BarButtonItem barButtonItem10;
         private DevExpress.XtraBars.Ribbon.RibbonPage BaoCao;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
