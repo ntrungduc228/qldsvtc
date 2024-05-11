@@ -77,5 +77,11 @@ namespace App
             ShowMdiChildren(typeof(Fpt_SVDKLTC));
 
         }
+
+        private void BtnDangKy_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(FrmDangKi));
+
+        }
     }
 }

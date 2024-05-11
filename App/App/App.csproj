@@ -84,6 +84,12 @@
     <Compile Include="Fpt_SVDKLTC.Designer.cs">
       <DependentUpon>Fpt_SVDKLTC.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmDangKi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDangKi.Designer.cs">
+      <DependentUpon>FrmDangKi.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +154,9 @@
     </Compile>
     <EmbeddedResource Include="Fpt_SVDKLTC.resx">
       <DependentUpon>Fpt_SVDKLTC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDangKi.resx">
+      <DependentUpon>FrmDangKi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDangNhap.resx">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>

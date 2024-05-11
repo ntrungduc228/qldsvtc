@@ -252,3 +252,4 @@ C:\Users\anony\OneDrive\Desktop\Workspace\C#\qldsvtc\App\App\bin\Debug\ru\DevExp
 C:\Users\anony\OneDrive\Desktop\Workspace\C#\qldsvtc\App\App\obj\Debug\App.Xrpt_LTC.resources
 C:\Users\anony\OneDrive\Desktop\Workspace\C#\qldsvtc\App\App\obj\Debug\App.Fpt_SVDKLTC.resources
 C:\Users\anony\OneDrive\Desktop\Workspace\C#\qldsvtc\App\App\obj\Debug\App.Xrpt_SVDKLTC.resources
+C:\Users\anony\OneDrive\Desktop\Workspace\C#\qldsvtc\App\App\obj\Debug\App.FrmDangKi.resources

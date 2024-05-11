@@ -66,7 +66,28 @@ namespace App
                 Program.myReader.Close();
             }else
             {
+                string strlenh1 = "EXEC [dbo].[SP_LayThongTinSVTuLogin] '" + txbTaiKhoan.Text + "', '" + txbMatKhau.Text + "'";
 
+                SqlDataReader reader = Program.ExecSqlDataReader(strlenh1);
+
+                try
+                {
+                    if (reader == null) return;
+                    reader.Read();
+                    Program.mHoten = reader.GetString(1);
+                    Program.username = txbTaiKhoan.Text;
+                    Program.mGroup = "SV";
+                }
+
+                catch (Exception ex)
+                {
+                    if (ex.Message.Contains("Error converting data type varchar to int"))
+                        MessageBox.Show("Bạn format cell lại cột \"Ngày \" qua kiểu Number hoặc mở file Excel.");
+                    else
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
             }
 
             Program.conn.Close();

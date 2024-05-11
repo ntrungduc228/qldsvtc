@@ -38,7 +38,7 @@ namespace App
             this.BtnLopTC = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.btnHocPhi = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnDangKy = new DevExpress.XtraBars.BarButtonItem();
             this.BtnDSLTC = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
@@ -77,7 +77,7 @@ namespace App
             this.BtnLopTC,
             this.barButtonItem4,
             this.btnHocPhi,
-            this.barButtonItem6,
+            this.BtnDangKy,
             this.BtnDSLTC,
             this.barButtonItem8,
             this.barButtonItem9,
@@ -156,14 +156,15 @@ namespace App
             this.btnHocPhi.Name = "btnHocPhi";
             this.btnHocPhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHocPhi_ItemClick);
             // 
-            // barButtonItem6
+            // BtnDangKy
             // 
-            this.barButtonItem6.Caption = "Đăng ký";
-            this.barButtonItem6.Id = 7;
-            this.barButtonItem6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
-            this.barButtonItem6.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.LargeImage")));
-            this.barButtonItem6.LargeWidth = 60;
-            this.barButtonItem6.Name = "barButtonItem6";
+            this.BtnDangKy.Caption = "Đăng ký";
+            this.BtnDangKy.Id = 7;
+            this.BtnDangKy.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
+            this.BtnDangKy.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.LargeImage")));
+            this.BtnDangKy.LargeWidth = 60;
+            this.BtnDangKy.Name = "BtnDangKy";
+            this.BtnDangKy.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnDangKy_ItemClick);
             // 
             // BtnDSLTC
             // 
@@ -264,7 +265,7 @@ namespace App
             this.ribbonPageGroup1.ItemLinks.Add(this.BtnLopTC);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem4);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnHocPhi);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem6);
+            this.ribbonPageGroup1.ItemLinks.Add(this.BtnDangKy);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Quản lý dữ liệu";
             // 
@@ -380,7 +381,7 @@ namespace App
         private DevExpress.XtraBars.BarButtonItem BtnLopTC;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.BarButtonItem btnHocPhi;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
+        private DevExpress.XtraBars.BarButtonItem BtnDangKy;
         private DevExpress.XtraBars.BarButtonItem BtnDSLTC;
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
         private DevExpress.XtraBars.BarButtonItem barButtonItem9;
