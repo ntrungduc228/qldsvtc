@@ -71,17 +71,16 @@ namespace App
             this.cT_DONGHOCPHIBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cT_DONGHOCPHITableAdapter = new App.DSHPTableAdapters.CT_DONGHOCPHITableAdapter();
             this.CT_HOCPHI_GRIDCONTROL = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colNGAYDONG = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSOTIENDONG = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.thêmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ghiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.phụcHồiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.behaviorManager2 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
-            this.behaviorManager3 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
+            this.bdsSINHVIEN = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colNGAYDONG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSOTIENDONG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
+            this.sINHVIENTableAdapter = new App.DSTableAdapters.SINHVIENTableAdapter();
             label2 = new System.Windows.Forms.Label();
             mALOPLabel = new System.Windows.Forms.Label();
             mASVLabel = new System.Windows.Forms.Label();
@@ -98,11 +97,10 @@ namespace App
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cT_DONGHOCPHIBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CT_HOCPHI_GRIDCONTROL)).BeginInit();
+            this.contextMenuStrip2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsSINHVIEN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
-            this.contextMenuStrip2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager3)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -443,6 +441,8 @@ namespace App
             // colHOCPHI
             // 
             this.colHOCPHI.Caption = "Học phí";
+            this.colHOCPHI.DisplayFormat.FormatString = "n0";
+            this.colHOCPHI.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colHOCPHI.FieldName = "HOCPHI";
             this.colHOCPHI.MinWidth = 25;
             this.colHOCPHI.Name = "colHOCPHI";
@@ -485,6 +485,8 @@ namespace App
             // 
             // CT_HOCPHI_GRIDCONTROL
             // 
+            this.CT_HOCPHI_GRIDCONTROL.ContextMenuStrip = this.contextMenuStrip2;
+            this.CT_HOCPHI_GRIDCONTROL.DataSource = this.bdsSINHVIEN;
             this.CT_HOCPHI_GRIDCONTROL.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CT_HOCPHI_GRIDCONTROL.Location = new System.Drawing.Point(0, 355);
             this.CT_HOCPHI_GRIDCONTROL.MainView = this.gridView2;
@@ -494,6 +496,41 @@ namespace App
             this.CT_HOCPHI_GRIDCONTROL.TabIndex = 26;
             this.CT_HOCPHI_GRIDCONTROL.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.thêmToolStripMenuItem,
+            this.ghiToolStripMenuItem,
+            this.phụcHồiToolStripMenuItem});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(211, 104);
+            // 
+            // thêmToolStripMenuItem
+            // 
+            this.thêmToolStripMenuItem.Name = "thêmToolStripMenuItem";
+            this.thêmToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.thêmToolStripMenuItem.Text = "Thêm";
+            this.thêmToolStripMenuItem.Click += new System.EventHandler(this.thêmToolStripMenuItem_Click_1);
+            // 
+            // ghiToolStripMenuItem
+            // 
+            this.ghiToolStripMenuItem.Name = "ghiToolStripMenuItem";
+            this.ghiToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.ghiToolStripMenuItem.Text = "Ghi";
+            this.ghiToolStripMenuItem.Click += new System.EventHandler(this.ghiToolStripMenuItem_Click_1);
+            // 
+            // phụcHồiToolStripMenuItem
+            // 
+            this.phụcHồiToolStripMenuItem.Name = "phụcHồiToolStripMenuItem";
+            this.phụcHồiToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.phụcHồiToolStripMenuItem.Text = "Phục hồi";
+            this.phụcHồiToolStripMenuItem.Click += new System.EventHandler(this.phụcHồiToolStripMenuItem_Click_1);
+            // 
+            // bdsSINHVIEN
+            // 
+            this.bdsSINHVIEN.DataSource = this.bdsHOCPHI;
             // 
             // gridView2
             // 
@@ -527,43 +564,9 @@ namespace App
             this.colSOTIENDONG.VisibleIndex = 0;
             this.colSOTIENDONG.Width = 94;
             // 
-            // contextMenuStrip1
+            // sINHVIENTableAdapter
             // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // contextMenuStrip2
-            // 
-            this.contextMenuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.thêmToolStripMenuItem,
-            this.ghiToolStripMenuItem,
-            this.phụcHồiToolStripMenuItem});
-            this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(211, 104);
-            this.contextMenuStrip2.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip2_Opening);
-            // 
-            // thêmToolStripMenuItem
-            // 
-            this.thêmToolStripMenuItem.Name = "thêmToolStripMenuItem";
-            this.thêmToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
-            this.thêmToolStripMenuItem.Text = "Thêm";
-            this.thêmToolStripMenuItem.Click += new System.EventHandler(this.thêmToolStripMenuItem_Click);
-            // 
-            // ghiToolStripMenuItem
-            // 
-            this.ghiToolStripMenuItem.Name = "ghiToolStripMenuItem";
-            this.ghiToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
-            this.ghiToolStripMenuItem.Text = "Ghi";
-            this.ghiToolStripMenuItem.Click += new System.EventHandler(this.ghiToolStripMenuItem_Click);
-            // 
-            // phụcHồiToolStripMenuItem
-            // 
-            this.phụcHồiToolStripMenuItem.Name = "phụcHồiToolStripMenuItem";
-            this.phụcHồiToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
-            this.phụcHồiToolStripMenuItem.Text = "Phục hồi";
-            this.phụcHồiToolStripMenuItem.Click += new System.EventHandler(this.phụcHồiToolStripMenuItem_Click);
+            this.sINHVIENTableAdapter.ClearBeforeFill = true;
             // 
             // FrmHocPhi
             // 
@@ -597,11 +600,10 @@ namespace App
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cT_DONGHOCPHIBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CT_HOCPHI_GRIDCONTROL)).EndInit();
+            this.contextMenuStrip2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bdsSINHVIEN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
-            this.contextMenuStrip2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -648,14 +650,13 @@ namespace App
         private DevExpress.XtraGrid.Columns.GridColumn colNGAYDONG;
         private DevExpress.XtraGrid.Columns.GridColumn colSOTIENDONG;
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private DevExpress.XtraGrid.Columns.GridColumn colSOTIENDADONG;
+        private DevExpress.XtraGrid.Columns.GridColumn colSOTIENCANDONG;
+        private System.Windows.Forms.BindingSource bdsSINHVIEN;
+        private DSTableAdapters.SINHVIENTableAdapter sINHVIENTableAdapter;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         private System.Windows.Forms.ToolStripMenuItem thêmToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ghiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem phụcHồiToolStripMenuItem;
-        private DevExpress.XtraGrid.Columns.GridColumn colSOTIENDADONG;
-        private DevExpress.XtraGrid.Columns.GridColumn colSOTIENCANDONG;
-        private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager2;
-        private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager3;
     }
 }

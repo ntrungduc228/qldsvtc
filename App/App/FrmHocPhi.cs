@@ -74,6 +74,7 @@ namespace App
 
         private void FrmHocPhi_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dS.SINHVIEN' table. You can move, or remove it, as needed.
             // TODO: This line of code loads data into the 'dSHP.CT_DONGHOCPHI' table. You can move, or remove it, as needed.
             //this.cT_DONGHOCPHITableAdapter.Fill(this.dSHP.CT_DONGHOCPHI);
             // TODO: This line of code loads data into the 'dSHP.HOCPHI' table. You can move, or remove it, as needed.
@@ -198,9 +199,9 @@ namespace App
             }
 
             string maSV = txtMASV.Text;
-            string nienkhoa = ((DataRowView)bdsHocPhi[vitri1])["NIENKHOA"].ToString();
-            string hocki = ((DataRowView)bdsHocPhi[vitri1])["HOCKY"].ToString();
-            string hocphi = ((DataRowView)bdsHocPhi[vitri1])["HOCPHI"].ToString();
+            string nienkhoa = ((DataRowView)bdsHocPhi[bdsHocPhi.Position])["NIENKHOA"].ToString();
+            string hocki = ((DataRowView)bdsHocPhi[bdsHocPhi.Position])["HOCKY"].ToString();
+            string hocphi = ((DataRowView)bdsHocPhi[bdsHocPhi.Position])["HOCPHI"].ToString();
             bdsHocPhi.EndEdit();
             bdsHocPhi.ResetCurrentItem();
             SqlConnection conn = new SqlConnection(Program.connstr);
@@ -211,40 +212,40 @@ namespace App
             tran = conn.BeginTransaction();
             try
             {
-                Console.WriteLine("abcd: ",maSV, hocki, hocphi);
+                Console.WriteLine(maSV);
+                Console.WriteLine(nienkhoa);
+                Console.WriteLine(hocki);
+                Console.WriteLine(hocphi);
                 Console.WriteLine("nienkhoa: ", nienkhoa, hocki, hocphi);
                 SqlCommand cmd = new SqlCommand("TAO_THONGTINHOCPHI", conn);
                 cmd.Connection = conn;
                 cmd.Transaction = tran;
-                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Clear();
                 cmd.Parameters.Add(new SqlParameter("@MASV", maSV));
-                cmd.Parameters.Add(new SqlParameter("@NienKhoa", nienkhoa));
-                cmd.Parameters.Add(new SqlParameter("@HocKy", hocki));
-                cmd.Parameters.Add(new SqlParameter("@HocPhi", hocphi));
+                cmd.Parameters.Add(new SqlParameter("@NIENKHOA", nienkhoa));
+                cmd.Parameters.Add(new SqlParameter("@HOCKY", hocki));
+                cmd.Parameters.Add(new SqlParameter("@HOCPHI", hocphi));
+                cmd.CommandType = CommandType.StoredProcedure;
 
-                //Console.WriteLine(cmd.Parameters.));
+                string query = cmd.CommandText;
+
+                foreach (SqlParameter p in cmd.Parameters)
+                {
+                    query = query.Replace(p.ParameterName, p.Value.ToString());
+                      Console.WriteLine(query);
+                }
 
                 // Add output parameter
-                SqlParameter resultParameter = new SqlParameter("@RESULT", SqlDbType.Int);
-                resultParameter.Direction = ParameterDirection.Output;
-                cmd.Parameters.Add(resultParameter);
+                //SqlParameter resultParameter = new SqlParameter("@RESULT", SqlDbType.Int);
+               // resultParameter.Direction = ParameterDirection.Output;
+                //cmd.Parameters.Add(resultParameter);
                 cmd.ExecuteNonQuery();
                 tran.Commit();
-                // Retrieve the result value
-                int result = Convert.ToInt32(resultParameter.Value);
+                MessageBox.Show("Them thanh cong", "", MessageBoxButtons.OK);
 
-                string queryUndo = "";
-                if (result == 1)
-                {
-                    MessageBox.Show("Them thanh cong", "", MessageBoxButtons.OK);
-                }
-                else
-                {
-                    MessageBox.Show("Them that bai - Kiem tra lai cac rang buoc!", "", MessageBoxButtons.OK);
-                    loadHOCPHI();
-                    conn.Close();
-                    return;
-                }
+                // Retrieve the result value
+                //int result = Convert.ToInt32(resultParameter.Value);
+
                 loadHOCPHI();
 
 
@@ -375,6 +376,107 @@ namespace App
         private void contextMenuStrip2_Opening(object sender, CancelEventArgs e)
         {
 
+        }
+
+        private void thêmToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            vitri = bdsCTHP.Position;
+            bdsCTHP.AddNew();
+            btnThem.Enabled = btnGhi.Enabled = btnHuy.Enabled = btnLamMoi.Enabled = btnPhucHoi.Enabled = false;
+        }
+
+        private void phụcHồiToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Load_CTDS_HOCPHI();
+            bdsCTHP.CancelEdit();
+            FrmHocPhi_Load(sender, e);
+            if (vitri > 0)
+            {
+                bdsCTHP.Position = vitri;
+            }
+            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnPhucHoi.Enabled = btnGhi.Enabled = btnPhucHoi.Enabled = true;
+
+        }
+
+        private void ghiToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                if (((DataRowView)bdsCTHP[bdsCTHP.Position])["SOTIENDONG"].ToString() == "")
+                {
+                    MessageBox.Show("Số tiền không được bỏ trống");
+                    return;
+                }
+                if (float.Parse(((DataRowView)bdsCTHP[bdsCTHP.Position])["SOTIENDONG"].ToString()) <= 0)
+                {
+                    MessageBox.Show("Số tiền không được nhỏ hơn 0đ");
+                    return;
+                }
+
+                if (float.Parse(((DataRowView)bdsCTHP[bdsCTHP.Position])["SOTIENDONG"].ToString()) > float.Parse(((DataRowView)bdsHocPhi[bdsHocPhi.Position])["SOTIENCANDONG"].ToString()))
+                {
+                    MessageBox.Show("Số tiền đóng không được lớn hơn số tiền cần đóng!");
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnPhucHoi.Enabled = btnGhi.Enabled = btnPhucHoi.Enabled = true;
+
+
+            string nienkhoa = ((DataRowView)bdsHocPhi[bdsHocPhi.Position])["NIENKHOA"].ToString();
+            string hocki = ((DataRowView)bdsHocPhi[bdsHocPhi.Position])["HOCKY"].ToString();
+            string msv = txtMASV.Text;
+            string sotiendong = ((DataRowView)bdsCTHP[bdsCTHP.Position])["SOTIENDONG"].ToString();
+            bdsCTHP.EndEdit();
+            bdsCTHP.ResetCurrentItem();
+            SqlConnection conn = new SqlConnection(Program.connstr);
+            // bắt đầu transaction
+            SqlTransaction tran;
+
+            conn.Open();
+            tran = conn.BeginTransaction();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("SV_DONGTIEN", conn);
+                cmd.Connection = conn;
+                cmd.Transaction = tran;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@MASV", msv));
+                cmd.Parameters.Add(new SqlParameter("@NienKhoa", nienkhoa));
+                cmd.Parameters.Add(new SqlParameter("@HocKy", hocki));
+                cmd.Parameters.Add(new SqlParameter("@SoTienDong", sotiendong));
+                cmd.ExecuteNonQuery();
+                tran.Commit();
+                MessageBox.Show("Thêm chi tiết học phí thành công!");
+                loadHOCPHI();
+
+
+            }
+            catch (SqlException sqlex)
+            {
+                try
+                {
+
+                    tran.Rollback();
+                    MessageBox.Show("Lỗi ghi chi tiết học phí vào Database. Bạn hãy xem lại ! " + sqlex.Message, "", MessageBoxButtons.OK);
+
+                }
+                catch (Exception ex2)
+                {
+                    Console.WriteLine("Rollback Exception Type: {0}", ex2.GetType());
+                    Console.WriteLine("  Message: {0}", ex2.Message);
+                }
+                conn.Close();
+                return;
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
     }
 }
