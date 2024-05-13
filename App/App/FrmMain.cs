@@ -92,6 +92,7 @@ namespace App
 
         private void BtnBDHM_ItemClick(object sender, ItemClickEventArgs e)
         {
+            ShowMdiChildren(typeof(frm_BHDM_R));
 
         }
     }

@@ -138,6 +138,18 @@
     <Compile Include="FrmSinhVien.Designer.cs">
       <DependentUpon>FrmSinhVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_BDMH.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Frm_BDMH.Designer.cs">
+      <DependentUpon>Frm_BDMH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_BHDM_R.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_BHDM_R.Designer.cs">
+      <DependentUpon>frm_BHDM_R.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frpt_LTC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +199,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSinhVien.resx">
       <DependentUpon>FrmSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_BDMH.resx">
+      <DependentUpon>Frm_BDMH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_BHDM_R.resx">
+      <DependentUpon>frm_BHDM_R.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frpt_LTC.resx">
       <DependentUpon>Frpt_LTC.cs</DependentUpon>
