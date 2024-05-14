@@ -95,5 +95,11 @@ namespace App
             ShowMdiChildren(typeof(frm_BHDM_R));
 
         }
+
+        private void BtnPhieuDiemSV_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(Frm_PhieuDiemSV));
+
+        }
     }
 }

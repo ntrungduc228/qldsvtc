@@ -150,6 +150,12 @@
     <Compile Include="frm_BHDM_R.Designer.cs">
       <DependentUpon>frm_BHDM_R.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_PhieuDiemSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_PhieuDiemSV.Designer.cs">
+      <DependentUpon>Frm_PhieuDiemSV.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frpt_LTC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,6 +169,12 @@
     </Compile>
     <Compile Include="Xrpt_LTC.Designer.cs">
       <DependentUpon>Xrpt_LTC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Xrpt_PhieuDiemSV.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xrpt_PhieuDiemSV.Designer.cs">
+      <DependentUpon>Xrpt_PhieuDiemSV.cs</DependentUpon>
     </Compile>
     <Compile Include="Xrpt_SVDKLTC.cs">
       <SubType>Component</SubType>
@@ -206,6 +218,9 @@
     <EmbeddedResource Include="frm_BHDM_R.resx">
       <DependentUpon>frm_BHDM_R.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_PhieuDiemSV.resx">
+      <DependentUpon>Frm_PhieuDiemSV.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frpt_LTC.resx">
       <DependentUpon>Frpt_LTC.cs</DependentUpon>
     </EmbeddedResource>
@@ -221,6 +236,9 @@
     </Compile>
     <EmbeddedResource Include="Xrpt_LTC.resx">
       <DependentUpon>Xrpt_LTC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xrpt_PhieuDiemSV.resx">
+      <DependentUpon>Xrpt_PhieuDiemSV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Xrpt_SVDKLTC.resx">
       <DependentUpon>Xrpt_SVDKLTC.cs</DependentUpon>

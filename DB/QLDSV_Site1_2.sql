@@ -174,12 +174,103 @@ BEGIN
 
 
 
-CREATE PROCEDURE [dbo].[SP_BDMH_Report] @NienKhoa varchar(9), @HocKy int, @Nhom int,@MonHoc nvarchar(50)
+Alter PROCEDURE [dbo].[SP_BDMH_Report] @NienKhoa varchar(9), @HocKy int, @Nhom int,@MonHoc nvarchar(50)
 as
 declare @LOPTINCHI int
 select @LOPTINCHI= MALTC from LOPTINCHI,MONHOC
 where LOPTINCHI.NIENKHOA = @NienKhoa AND LOPTINCHI.HOCKY = @HocKy AND LOPTINCHI.NHOM = @Nhom
-AND MONHOC.TENMH = @MonHoc AND LOPTINCHI.MAMH = MONHOC.MAMH
+AND MONHOC.MaMH = @MonHoc AND LOPTINCHI.MAMH = MONHOC.MAMH
 select SINHVIEN.MASV,HO,TEN,DIEM_CC,DIEM_GK,DIEM_CK,DIEM_TK= DIEM_CC*0.1 + DIEM_GK*0.3 + DIEM_CK*0.6 from DANGKY,SINHVIEN
 where  DANGKY.MASV = SINHVIEN.MASV AND DANGKY.MALTC = @LOPTINCHI AND HUYDANGKY = 0
 order by TEN,HO
+
+
+
+CREATE PROCEDURE [dbo].[SP_FULLMARK] @MSSV varchar(10) , @Type int
+--0:PGV
+--1:Khoa (Chỉ thực hiện trên đúng 1 sv hiện tại)
+as
+IF (@Type = 0)
+BEGIN
+	IF EXISTS (SELECT 1 FROM SINHVIEN WHERE MASV=@MSSV)  
+				BEGIN
+                    with GETDIEMMON (MAMH,DIEMTK) as
+					(select LOPTINCHI.MAMH,DIEMTK= DIEM_CC * 0.1 + DIEM_GK * 0.3 + DIEM_CK * 0.6 
+					from DANGKY,LOPTINCHI 
+					where DANGKY.MASV = @MSSV AND DANGKY.MALTC = LOPTINCHI.MALTC AND HUYDANGKY=0)
+					select TENMH,DIEMTK= MAX(DIEMTK) 
+					from MONHOC,GETDIEMMON
+					where GETDIEMMON.MAMH = MONHOC.MAMH
+					group by TENMH
+                END
+	ELSE IF  EXISTS (SELECT 1 FROM LINK0.QLDSV_TC.dbo.SINHVIEN WHERE MASV=@MSSV) 
+				BEGIN
+                    with GETDIEMMON (MAMH,DIEMTK) as
+					(select LOPTINCHI.MAMH,DIEMTK= DIEM_CC * 0.1 + DIEM_GK * 0.3 + DIEM_CK * 0.6 
+					from DANGKY,LOPTINCHI 
+					where DANGKY.MASV = @MSSV AND DANGKY.MALTC = LOPTINCHI.MALTC AND HUYDANGKY=0)
+					select TENMH,DIEMTK= MAX(DIEMTK) 
+					from MONHOC,GETDIEMMON
+					where GETDIEMMON.MAMH = MONHOC.MAMH
+					group by TENMH
+                END
+ELSE
+	RAISERROR(N'SINH VIÊN NÀY KHÔNG TỒN TẠI',16,1)
+END
+ELSE
+BEGIN
+	IF EXISTS (SELECT 1 FROM SINHVIEN WHERE MASV=@MSSV)  
+				BEGIN
+                    with GETDIEMMON (MAMH,DIEMTK) as
+					(select LOPTINCHI.MAMH,DIEMTK= DIEM_CC * 0.1 + DIEM_GK * 0.3 + DIEM_CK * 0.6 
+					from DANGKY,LOPTINCHI 
+					where DANGKY.MASV = @MSSV AND DANGKY.MALTC = LOPTINCHI.MALTC AND HUYDANGKY=0)
+					select TENMH,DIEMTK= MAX(DIEMTK) 
+					from MONHOC,GETDIEMMON
+					where GETDIEMMON.MAMH = MONHOC.MAMH
+					group by TENMH
+                END
+	ELSE
+		RAISERROR(N'SINH VIÊN NÀY KHÔNG TỒN TẠI',16,1)
+END
+
+
+
+
+CREATE PROCEDURE [dbo].[SP_CHECKID] @Code NVARCHAR(15),
+@Type NVARCHAR(15)
+AS
+BEGIN
+	-- LOP
+	IF(@Type = 'MALOP')
+	BEGIN
+		
+		IF EXISTS(SELECT * FROM dbo.LOP WHERE dbo.LOP.MALOP = @Code)
+			RETURN 1; -- Mã tồn tại ở phân mãnh hiện tại
+	
+		ELSE IF EXISTS(SELECT * FROM LINK0.QLDSV_TC.dbo.LOP AS LOP WHERE LOP.MALOP = @Code)
+			RETURN 2;	--Mã NV tồn tại ở phân mãnh  khác
+	END
+
+	--MON Hoc
+	IF(@Type = 'MAMONHOC')
+	BEGIN
+		IF EXISTS(SELECT * FROM dbo.MONHOC WHERE MAMH = @Code)
+		RETURN 1;
+	END
+	
+	
+
+
+		IF(@Type = 'MASV')
+	BEGIN
+		
+		IF EXISTS(SELECT * FROM dbo.SINHVIEN WHERE dbo.SINHVIEN.MASV = @Code)
+			RETURN 1; -- Mã tồn tại ở phân mãnh hiện tại
+	
+		ELSE IF EXISTS(SELECT * FROM LINK0.QLDSV_TC.dbo.SINHVIEN AS SV WHERE SV.MASV = @Code)
+			RETURN 2;	--Mã NV tồn tại ở phân mãnh  khác
+	END
+
+	RETURN 0	--Không bị trùng được thêm
+END

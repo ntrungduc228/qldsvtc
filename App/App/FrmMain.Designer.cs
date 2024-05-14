@@ -42,7 +42,7 @@ namespace App
             this.BtnDSLTC = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.BtnBDHM = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnPhieuDiemSV = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
@@ -81,7 +81,7 @@ namespace App
             this.BtnDSLTC,
             this.barButtonItem8,
             this.BtnBDHM,
-            this.barButtonItem10,
+            this.BtnPhieuDiemSV,
             this.barButtonItem11,
             this.barButtonItem12,
             this.barButtonItem13,
@@ -191,20 +191,21 @@ namespace App
             // 
             this.BtnBDHM.Caption = "In BDMH";
             this.BtnBDHM.Id = 10;
-            this.BtnBDHM.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.ImageOptions.Image")));
-            this.BtnBDHM.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.ImageOptions.LargeImage")));
+            this.BtnBDHM.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnBDHM.ImageOptions.Image")));
+            this.BtnBDHM.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnBDHM.ImageOptions.LargeImage")));
             this.BtnBDHM.LargeWidth = 60;
             this.BtnBDHM.Name = "BtnBDHM";
             this.BtnBDHM.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnBDHM_ItemClick);
             // 
-            // barButtonItem10
+            // BtnPhieuDiemSV
             // 
-            this.barButtonItem10.Caption = "In Phiếu điểm SV";
-            this.barButtonItem10.Id = 11;
-            this.barButtonItem10.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem10.ImageOptions.Image")));
-            this.barButtonItem10.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem10.ImageOptions.LargeImage")));
-            this.barButtonItem10.LargeWidth = 60;
-            this.barButtonItem10.Name = "barButtonItem10";
+            this.BtnPhieuDiemSV.Caption = "In Phiếu điểm SV";
+            this.BtnPhieuDiemSV.Id = 11;
+            this.BtnPhieuDiemSV.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem10.ImageOptions.Image")));
+            this.BtnPhieuDiemSV.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem10.ImageOptions.LargeImage")));
+            this.BtnPhieuDiemSV.LargeWidth = 60;
+            this.BtnPhieuDiemSV.Name = "BtnPhieuDiemSV";
+            this.BtnPhieuDiemSV.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnPhieuDiemSV_ItemClick);
             // 
             // barButtonItem11
             // 
@@ -284,7 +285,7 @@ namespace App
             this.ribbonPageGroup2.ItemLinks.Add(this.BtnDSLTC);
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem8);
             this.ribbonPageGroup2.ItemLinks.Add(this.BtnBDHM);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem10);
+            this.ribbonPageGroup2.ItemLinks.Add(this.BtnPhieuDiemSV);
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem11);
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem12);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
@@ -387,7 +388,7 @@ namespace App
         private DevExpress.XtraBars.BarButtonItem BtnDSLTC;
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
         private DevExpress.XtraBars.BarButtonItem BtnBDHM;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem10;
+        private DevExpress.XtraBars.BarButtonItem BtnPhieuDiemSV;
         private DevExpress.XtraBars.Ribbon.RibbonPage BaoCao;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem11;
