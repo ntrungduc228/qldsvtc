@@ -43,7 +43,7 @@ namespace App
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.BtnBDHM = new DevExpress.XtraBars.BarButtonItem();
             this.BtnPhieuDiemSV = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnInHocPhi = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
@@ -82,7 +82,7 @@ namespace App
             this.barButtonItem8,
             this.BtnBDHM,
             this.BtnPhieuDiemSV,
-            this.barButtonItem11,
+            this.BtnInHocPhi,
             this.barButtonItem12,
             this.barButtonItem13,
             this.barButtonItem14,
@@ -201,20 +201,21 @@ namespace App
             // 
             this.BtnPhieuDiemSV.Caption = "In Phiếu điểm SV";
             this.BtnPhieuDiemSV.Id = 11;
-            this.BtnPhieuDiemSV.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem10.ImageOptions.Image")));
-            this.BtnPhieuDiemSV.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem10.ImageOptions.LargeImage")));
+            this.BtnPhieuDiemSV.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnPhieuDiemSV.ImageOptions.Image")));
+            this.BtnPhieuDiemSV.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnPhieuDiemSV.ImageOptions.LargeImage")));
             this.BtnPhieuDiemSV.LargeWidth = 60;
             this.BtnPhieuDiemSV.Name = "BtnPhieuDiemSV";
             this.BtnPhieuDiemSV.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnPhieuDiemSV_ItemClick);
             // 
-            // barButtonItem11
+            // BtnInHocPhi
             // 
-            this.barButtonItem11.Caption = "In DS Học phí";
-            this.barButtonItem11.Id = 12;
-            this.barButtonItem11.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem11.ImageOptions.Image")));
-            this.barButtonItem11.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem11.ImageOptions.LargeImage")));
-            this.barButtonItem11.LargeWidth = 60;
-            this.barButtonItem11.Name = "barButtonItem11";
+            this.BtnInHocPhi.Caption = "In DS Học phí";
+            this.BtnInHocPhi.Id = 12;
+            this.BtnInHocPhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem11.ImageOptions.Image")));
+            this.BtnInHocPhi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem11.ImageOptions.LargeImage")));
+            this.BtnInHocPhi.LargeWidth = 60;
+            this.BtnInHocPhi.Name = "BtnInHocPhi";
+            this.BtnInHocPhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnInHocPhi_ItemClick);
             // 
             // barButtonItem12
             // 
@@ -286,7 +287,7 @@ namespace App
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem8);
             this.ribbonPageGroup2.ItemLinks.Add(this.BtnBDHM);
             this.ribbonPageGroup2.ItemLinks.Add(this.BtnPhieuDiemSV);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem11);
+            this.ribbonPageGroup2.ItemLinks.Add(this.BtnInHocPhi);
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem12);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             // 
@@ -391,7 +392,7 @@ namespace App
         private DevExpress.XtraBars.BarButtonItem BtnPhieuDiemSV;
         private DevExpress.XtraBars.Ribbon.RibbonPage BaoCao;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem11;
+        private DevExpress.XtraBars.BarButtonItem BtnInHocPhi;
         private DevExpress.XtraBars.BarButtonItem barButtonItem12;
         private DevExpress.XtraBars.BarButtonItem barButtonItem13;
         private DevExpress.XtraBars.BarButtonItem barButtonItem14;

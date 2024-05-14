@@ -101,5 +101,11 @@ namespace App
             ShowMdiChildren(typeof(Frm_PhieuDiemSV));
 
         }
+
+        private void BtnInHocPhi_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(frpt_DSHocPhi));
+
+        }
     }
 }

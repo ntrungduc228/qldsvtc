@@ -156,6 +156,12 @@
     <Compile Include="Frm_PhieuDiemSV.Designer.cs">
       <DependentUpon>Frm_PhieuDiemSV.cs</DependentUpon>
     </Compile>
+    <Compile Include="frpt_DSHocPhi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frpt_DSHocPhi.Designer.cs">
+      <DependentUpon>frpt_DSHocPhi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frpt_LTC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +170,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Xrpt_DSHocPhi.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xrpt_DSHocPhi.Designer.cs">
+      <DependentUpon>Xrpt_DSHocPhi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Xrpt_LTC.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -221,6 +233,9 @@
     <EmbeddedResource Include="Frm_PhieuDiemSV.resx">
       <DependentUpon>Frm_PhieuDiemSV.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frpt_DSHocPhi.resx">
+      <DependentUpon>frpt_DSHocPhi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frpt_LTC.resx">
       <DependentUpon>Frpt_LTC.cs</DependentUpon>
     </EmbeddedResource>
@@ -234,6 +249,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Xrpt_DSHocPhi.resx">
+      <DependentUpon>Xrpt_DSHocPhi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Xrpt_LTC.resx">
       <DependentUpon>Xrpt_LTC.cs</DependentUpon>
     </EmbeddedResource>
