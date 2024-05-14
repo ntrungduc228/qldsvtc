@@ -47,7 +47,7 @@ namespace App
             this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnLogout = new DevExpress.XtraBars.BarButtonItem();
             this.HeThong = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.BaoCao = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -86,7 +86,7 @@ namespace App
             this.barButtonItem12,
             this.barButtonItem13,
             this.barButtonItem14,
-            this.barButtonItem15});
+            this.BtnLogout});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.MaxItemId = 17;
             this.ribbon.Name = "ribbon";
@@ -211,8 +211,8 @@ namespace App
             // 
             this.BtnInHocPhi.Caption = "In DS Học phí";
             this.BtnInHocPhi.Id = 12;
-            this.BtnInHocPhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem11.ImageOptions.Image")));
-            this.BtnInHocPhi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem11.ImageOptions.LargeImage")));
+            this.BtnInHocPhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnInHocPhi.ImageOptions.Image")));
+            this.BtnInHocPhi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnInHocPhi.ImageOptions.LargeImage")));
             this.BtnInHocPhi.LargeWidth = 60;
             this.BtnInHocPhi.Name = "BtnInHocPhi";
             this.BtnInHocPhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnInHocPhi_ItemClick);
@@ -244,14 +244,15 @@ namespace App
             this.barButtonItem14.LargeWidth = 60;
             this.barButtonItem14.Name = "barButtonItem14";
             // 
-            // barButtonItem15
+            // BtnLogout
             // 
-            this.barButtonItem15.Caption = "Đăng xuất";
-            this.barButtonItem15.Id = 16;
-            this.barButtonItem15.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.ImageOptions.Image")));
-            this.barButtonItem15.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.ImageOptions.LargeImage")));
-            this.barButtonItem15.LargeWidth = 60;
-            this.barButtonItem15.Name = "barButtonItem15";
+            this.BtnLogout.Caption = "Đăng xuất";
+            this.BtnLogout.Id = 16;
+            this.BtnLogout.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.ImageOptions.Image")));
+            this.BtnLogout.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.ImageOptions.LargeImage")));
+            this.BtnLogout.LargeWidth = 60;
+            this.BtnLogout.Name = "BtnLogout";
+            this.BtnLogout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnLogout_ItemClick);
             // 
             // HeThong
             // 
@@ -303,7 +304,7 @@ namespace App
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem13);
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem14);
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem15);
+            this.ribbonPageGroup3.ItemLinks.Add(this.BtnLogout);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "Chức năng";
             // 
@@ -396,7 +397,7 @@ namespace App
         private DevExpress.XtraBars.BarButtonItem barButtonItem12;
         private DevExpress.XtraBars.BarButtonItem barButtonItem13;
         private DevExpress.XtraBars.BarButtonItem barButtonItem14;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem15;
+        private DevExpress.XtraBars.BarButtonItem BtnLogout;
         private DevExpress.XtraBars.Ribbon.RibbonPage CauHinh;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;

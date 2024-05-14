@@ -107,5 +107,17 @@ namespace App
             ShowMdiChildren(typeof(frpt_DSHocPhi));
 
         }
+
+        private void BtnLogout_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                f.Close();
+            }
+            Program.formDangNhap.Visible = true;
+
+
+            this.Close();
+        }
     }
 }
