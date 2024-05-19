@@ -119,5 +119,10 @@ namespace App
 
             this.Close();
         }
+
+        private void BtnTaoTK_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(Frm_TaoTK));
+        }
     }
 }

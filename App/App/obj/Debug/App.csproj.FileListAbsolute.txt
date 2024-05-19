@@ -260,3 +260,4 @@ C:\Users\anony\OneDrive\Desktop\Workspace\C#\qldsvtc\App\App\obj\Debug\App.Frm_P
 C:\Users\anony\OneDrive\Desktop\Workspace\C#\qldsvtc\App\App\obj\Debug\App.Xrpt_PhieuDiemSV.resources
 C:\Users\anony\OneDrive\Desktop\Workspace\C#\qldsvtc\App\App\obj\Debug\App.frpt_DSHocPhi.resources
 C:\Users\anony\OneDrive\Desktop\Workspace\C#\qldsvtc\App\App\obj\Debug\App.Xrpt_DSHocPhi.resources
+C:\Users\anony\OneDrive\Desktop\Workspace\C#\qldsvtc\App\App\obj\Debug\App.Frm_TaoTK.resources

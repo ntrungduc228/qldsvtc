@@ -156,6 +156,12 @@
     <Compile Include="Frm_PhieuDiemSV.Designer.cs">
       <DependentUpon>Frm_PhieuDiemSV.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_TaoTK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_TaoTK.Designer.cs">
+      <DependentUpon>Frm_TaoTK.cs</DependentUpon>
+    </Compile>
     <Compile Include="frpt_DSHocPhi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_PhieuDiemSV.resx">
       <DependentUpon>Frm_PhieuDiemSV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_TaoTK.resx">
+      <DependentUpon>Frm_TaoTK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frpt_DSHocPhi.resx">
       <DependentUpon>frpt_DSHocPhi.cs</DependentUpon>
