@@ -72,7 +72,7 @@ namespace App
 
                 try
                 {
-                    if (reader == null) return;
+                    if (reader == null) return; 
                     reader.Read();
                     Program.mHoten = reader.GetString(1);
                     Program.username = txbTaiKhoan.Text;

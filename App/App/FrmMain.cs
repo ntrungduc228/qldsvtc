@@ -23,6 +23,31 @@ namespace App
             this.MA.Text = "Mã: " + Program.username;
             this.HOTEN.Text = "Họ và tên: " + Program.mHoten;
             this.NHOM.Text = "Nhóm: " + Program.mGroup;
+            PhanQuyen();
+
+        }
+
+        void PhanQuyen()
+        {
+            if (Program.mGroup.Equals("SV"))
+            {
+                BtnDangKy.Enabled = true;
+                BtnDiem.Enabled = btnHocPhi.Enabled = BtnLopHoc.Enabled = BtnLopTC.Enabled = BtnMonHoc.Enabled = BtnSinhVien.Enabled = false;
+                BaoCao.Visible = true;
+                BtnPhieuDiemSV.Enabled = true;
+                BtnBDHM.Enabled = BtnDSLTC.Enabled = barButtonItem8.Enabled = btnHocPhi.Enabled = barButtonItem12.Enabled = false;
+
+            }
+            if (Program.mGroup.Equals("PKT"))
+            {
+                btnHocPhi.Enabled = true;
+                BtnDiem.Enabled = BtnLopHoc.Enabled = BtnLopTC.Enabled = BtnMonHoc.Enabled = BtnSinhVien.Enabled = BtnDangKy.Enabled = false;
+                BtnBDHM.Enabled = BtnDSLTC.Enabled = BtnDangKy.Enabled = barButtonItem8.Enabled = BtnPhieuDiemSV.Enabled = barButtonItem12.Enabled = false;
+            }
+            if (Program.mGroup.Equals("PGV") || Program.mGroup.Equals("KHOA"))
+            {
+                BtnDangKy.Enabled = btnHocPhi.Enabled = false;
+            }
         }
 
         private void ShowMdiChildren(Type fType)
